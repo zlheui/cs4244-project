@@ -1,8 +1,21 @@
 'use strict';
 
-function appendData(data, done) {
-  $('#choices').addClass('hidden').empty();
+function appendToOutput(li) {
+  $('#output').append(li).animate({
+    scrollTop: $('#output').prop('scrollHeight')
+  }, {
+    duration: 2000,
+    queue: false
+  });
+}
+
+function clearInput() {
+  $('#choices').addClass('hidden');
   $('#number').addClass('hidden');
+}
+
+function appendData(data, done) {
+  $('#choices').empty();
 
   var optIndex = data.search('<opt>');
   if (optIndex >=  0) {
@@ -31,17 +44,22 @@ function appendData(data, done) {
   }
 
   if (boolIndex < 0 && optIndex < 0) {
-    $('#number').removeClass('hidden');
+    $('#number').removeClass('hidden').focus();
   }
 
   var li = $('<li>').text(data);
-  $('#output').append(li);
-  done();
+  appendToOutput(li);
+  if (done && typeof done === 'function') {
+    done();
+  }
 }
 
 function sendValue(value, done) {
+  clearInput();
   $.post('/input', { text: value }, function(data) {
-    appendData(data, done);
+    setTimeout(function() {
+      appendData(data, done);
+    }, 500);
   });
 };
 
@@ -49,6 +67,7 @@ $('#debug').keyup(function(event) {
   if (event.keyCode === 13) {
     var val = $('#debug').val().trim();
     if (val.length > 0) {
+      appendToOutput($('<li>').addClass('debug').text(val));
       sendValue(val, function(err) {
         if (!err) {
           $('#debug').val('');
@@ -59,21 +78,23 @@ $('#debug').keyup(function(event) {
 });
 
 $('#choices').on('click', 'button', function(event) {
-  var val = $(event.currentTarget).val();
+  var currTarget = $(event.currentTarget);
+  var val = currTarget.val();
+  appendToOutput($('<li>').addClass('answer').text(currTarget.text()));
   sendValue(val);
 });
 
 $('#number').keyup(function(event) {
+  var val = $('#number').val();
+  $('#number').toggleClass('alert', parseInt(val) < 0);
   if (event.keyCode === 13) {
-    var val = $('#number').val();
     if (val.length > 0 && parseInt(val) > 0) {
+      appendToOutput($('<li>').addClass('answer').text(val));
       sendValue(val, function(err) {
         if (!err) {
           $('#number').val('');
         }
       });
-    } else {
-      alert('Positive number pls.');
     }
   }
 });
