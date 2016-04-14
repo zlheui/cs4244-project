@@ -26,13 +26,13 @@
 	(modify ?qn(ans ?a))
 )
 
-(defrule 3DGAME::initial_convert
-	?req <- (laptop-requirement (id test))
-	?fact <-(initial-requirement)
-	=>
-	(retract ?fact)
-	(modify ?req(memory-lower 8) (storage-size-lower 512) (has-discrete-graphic-card Y))
-)
+;(defrule 3DGAME::initial_convert
+;	?req <- (laptop-requirement (id test))
+;	?fact <-(initial-requirement)
+;	=>
+;	(retract ?fact)
+;	(modify ?req(memory-lower 8) (storage-size-lower 512) (has-discrete-graphic-card Y))
+;)
 
 (defrule 3DGAME::q50-convert
 	?req <- (laptop-requirement (id test))
@@ -70,4 +70,5 @@
 (deffacts 3DGAME::test-qn-3DGAME
 	(qn-ans(id 51))
 	(qn-ans(id 50))
+;	(initial-requirement)
 )

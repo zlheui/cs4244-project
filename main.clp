@@ -39,7 +39,8 @@
 	(slot os (type STRING))
 	(slot warranty (type INTEGER))
 	(slot colors (type STRING))
-	(slot detachable (type SYMBOL)))
+	(slot detachable (type SYMBOL))
+)
 
 (deftemplate MAIN::laptop-requirement
 	(slot id (type SYMBOL) (default REQ))
@@ -133,11 +134,11 @@
 	(output (id test))
 )
 
-;(defrule MAIN::ask-question
-;	?requirement <- (laptop-requirement(is-ansd N))
-;	=>
-;	(focus 3DGAME)
-;	(modify ?requirement (is-ansd Y))
-;)
+(defrule MAIN::ask-question
+	?requirement <- (laptop-requirement(is-ansd N))
+	=>
+	(focus CASUALGAME)
+	(modify ?requirement (is-ansd Y))
+)
 
 
