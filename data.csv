@@ -1,87 +1,87 @@
 brand,model,price,screen-size,screen-resolution-x,screen-resolution-y,is-fhd,is-ultra-hd,is-touchable,weight,cpu-brand,cpu-cores,cpu-frequency,cpu-class,memory,memory-type,memory-speed,gpu,has-discrete-graphic-card,gpu-class,storage-size,storage-type,storage-speed,configurable,battery-life,os,warranty,colors,detachable
-Lenovo,ThinkPad E465 ,660,14,1366,768,N,N,N,1.91,AMD,2,1.6,2,4,DDR3L,1600,AMD Radeon R5 (Carrizo),N,0,500,HDD,5400,Up to AMD A10-8700P Processor;Up to 16 GB DDR3L;Up to 1 TB HDD 5400 rpm / 500 GB HDD 7200 rpm / 500 GB HDD 5400 rpm / 500 GB HDD 5400 rpm (8 GB Hybrid) / 192 GB SSD;,6.5,Windows 10 Home 64,1,Black,N
-Lenovo,Ideapad 500-15 80K4001TSB,901.98,15.6,1920,1080,Y,N,N,2.3,AMD,2,1.8,2,4,DDR3L,1600,AMD Radeon R5 M330 2GB,Y,0,1024,HDD,5400,Up to AMD Carrizo FX-8800P APU;Up to 16 GB DDR3L,4,Windows 10 Home 64,1,"Black, White",N
-Lenovo,Lenovo S41-35 80JW0014SB,619,14,1366,768,N,N,N,1.68,AMD,4,1.8,1,4,DDR3L,1600,AMD Radeon R5 M330 2GB,Y,0,500,HDD,5400,Up to AMD A8-7410 Processor;Up to 8GB DDR3L;Up to 1TB HDD or up to 1TB SSHD,6,Windows 10 Home 64,1,Silver,N
-Lenovo,Ideapad 300-14ISK 80Q6009SSB,899,14,1366,768,N,N,N,2.1,Intel,2,2.3,2,4,DDR3L,1600,AMD Radeon R5 M330 2GB,Y,0,1024,HDD,5400,Up to 6th Generation IntelÂ CoreÈ i Processor;Up to 1 TB HDD or SSHD (IntelÂ CoreÈ i supports up to 128 GB SSD),4,Windows 10 Home 64,1,"Black, Silver",N
-Dell,Inspiron 14 5000 Series (IntelÂ) - 5459 ,949,14,1366,768,N,N,N,2,Intel,2,2.3,2,4,DDR3L,1600,AMD RadeonÈ R5 M335 2GB DDR3,Y,0,500,HDD,5400,Up to 1 TB HDD;Up to AMD RadeonÈ R5 M335 4GB DDR3;,8,Windows 10 Home 64,1,"Red, White, Silver, Black",N
-Lenovo,IdeaPad 100S-11 80R2002CSB ,284.05,11.6,1366,768,N,N,N,1,Intel,4,1.33,0,2,DDR3L,1600,Intel HD Graphics,N,0,32,EMMC,,Nil,8,Windows 10 Home 32,1,"Silver, Red",N
-HP,HP Pavilion x2 Detachable 10-n101TU,549,10.1,1280,800,N,N,Y,1.13,Intel,4,1.44,0,2,DDR3L,1600,Intel HD Graphics,N,0,64,eMMC,,,8,Windows 10 Home 64,1,Blizzard white,Y
-Dell,Inspiron 11 3000 Series (3162),349,11.6,1366,768,N,N,N,1.18,Intel,2,1.6,0,2,DDR3L,1600,Intel HD Graphics,N,0,32,EMMC,,Up to 4 GB DDR3L; Up to 500 GB HDD,9.5,Windows 10 Home 64,1,"Blue, Red, White",N
 Acer,Acer R3-131T-P0BU,599,11.6,1366,768,N,N,Y,1.58,Intel,4,1.6,0,4,DDR3L,,Intel HD Graphics,N,0,500,HDD,,,8,Windows 10 Home,1,Blue,N
-Apple ,13-inch MacBook Pro,1488,13.3,1280,800,N,N,N,1.62,Intel,2,2.5,2,4,LPDDR3,1600,Intel HD Graphics 4000,N,0,500,HDD,5400,,7,OS X,0,,N
-Toshiba,Satellite P30W-B200S Ultrabook,2399,13.3,1920,1080,Y,N,Y,0.91,Intel,2,1.7,2,8,DDR3L,1600,Intel HD Graphics 4400,N,0,128,SSD,,,7,Windows 8.1,1,Brushed Aluminium Silver,Y
-HP,HP EliteBook Folio 9480m Notebook PC,2999,14,1366,768,N,N,N,1.61,Intel,2,2.1,3,8,DDR3L,1600,Intel HD Graphics 4400,N,0,256,SSD,,,5,Windows 7 Pro 64,3,,N
-Asus,ZenBook UX305CA-FC004T,1098,13.3,1920,1080,Y,N,N,1.2,Intel,2,0.9,2,4,,,Intel HD Graphics 515,N,0,128,SSD,,,10,Win10,2,Black,N
-Microsoft,Microsoft Surface Pro 4 ,899,12.3,2736,1824,Y,N,Y,0.79,Intel,2,0.9,2,4,,,Intel HD Graphics 515,N,0,128,SSD,,,9,Windows 10 Pro,1,Silver,Y
-Asus,ZenBook UX305CA-FC024T,1398,13.3,1920,1080,Y,N,N,1.2,Intel,2,1.1,2,8,,,Intel HD Graphics 515,N,0,256,SSD,,,10,Win10,2,White,N
-HP,HP Elite x2 1012 G1 LTE (With travel keyboard),2099,12,1920,1280,Y,N,Y,1.2,Intel,2,1.1,2,8,LPDDR3,1866,Intel HD Graphics 515,N,0,256,SSD,,,7,Windows 10 Pro 64,1,,Y
-Dell,XPS 12,2099,12.5,3840,2160,Y,Y,Y,1.27,Intel,2,1.1,2,8,DDR3L,1600,Intel HD Graphics 515,N,0,256,SSD,,Up to 512 GB SSD;Up to 6th Generation IntelÂ CoreÈ m7 6Y75 ,5,Windows 10 Home 64,1,Black,Y
-Asus,ZenBook UX305CA-FB055T,1898,13.3,3200,1800,Y,Y,N,1.2,Intel,2,1.2,2,8,,,Intel HD Graphics 515,N,0,512,SSD,,,10,Win10,2,Black,N
-HP,HP Spectre x2 Detachable 12-a017TU,1999,12,1920,1280,Y,Y,Y,1.19,Intel,2,1.2,2,8,LDDR3,,Intel HD Graphics 515,N,0,256,SSD,,,7,Windows 10 Home 64,1,Natural silver,Y
-Dell,XPS 13(9350) ,1399,13.3,1920,1080,Y,N,N,1.2,Intel,2,2.3,2,4,LPDDR3,1866,Intel HD Graphics 520,N,1,128,SSD,,Up to 8 GB Memory; Up to 256 SSD; Up to 6th Generation Intel Core i7-6560U ,8,Windows 10 Home 64,1,Silver,N
-Lenovo,ThinkPad L460 ,829,14,1366,768,N,N,N,1.9,Intel,2,2.3,2,4,DDR3L,1600,Intel HD Graphics 520,N,1,500,HDD,7200,Up to 6th Gen IntelÂ CoreÈ i7 processor;Up to 32 GB Memory,8.7,Windows 10 Home 64,1,Black,N
-Lenovo,ThinkPad T460 ,1534,14,1366,768,N,N,N,1.71,Intel,2,2.3,2,4,DDR3L,1600,Intel HD Graphics 520,N,1,500,HDD,7200,Up to 6th Gen IntelÂ CoreÈ i7 processor;Up to 32 GB Memory;Up to NVIDIAÂ GeForceÂ 940MX,13,Windows 10 Home 64,1,Black,N
 Acer,Acer V3-372 Ultrabook,1098,13.3,1920,1080,Y,N,N,1.6,Intel,2,2.3,2,8,DDR3L,,Intel HD Graphics 520,N,1,1024,HDD,,,6,Windows 10 Home,1,White/Iron,N
-Asus,Asus X456UB-WX006T,999,14,1366,768,N,N,N,2,Intel,2,2.3,2,8,,,Intel HD Graphics 520,N,1,1024,HDD,,,4,Win10,1,Black,N
-HP,HP Notebook 14-ac135TX,899,14,1366,768,N,N,N,1.94,Intel,2,2.3,2,4,DDR3L,,Intel HD Graphics 520,N,1,1024,HDD,5400,,4,Windows 10 Home 64,1,Jack black,N
-HP,HP Notebook 15-ac113TX,899,15.6,1366,768,N,N,N,2.19,Intel,2,2.3,2,4,DDR3L,1600,Intel HD Graphics 520,N,1,1024,HDD,5400,,4,Windows 10 Home 64,1,Jack black,N
-HP,HP Pavillon Notebook 14-ab170TX,849,14,1366,768,N,N,N,1.96,Intel,2,2.3,2,4,DDR3L,1600,Intel HD Graphics 520,N,1,500,HDD,5400,,4,Windows 10 Home 64,1,Natural silver,N
-Lenovo,Lenovo YOGA 900-13 80MK00EHSB ,1999,13.3,3200,1800,Y,N,Y,1.3,intel,2,2.3,2,8,LPDDR3,1600,Intel HD Graphics 520,N,1,256,SSD,,Up to 6th Generation IntelÂ CoreÈ i7 Processor;Up to 16 GB LP-DDR3L;Up to 512 GB Samsung SSD,10,Windows 10 Home 64,1,"Silver, Clementine Orange, Champagne Gold",N
-Lenovo,ThinkPad Yoga 260 Convertible,1749,12.5,1920,1080,Y,N,Y,1.3,Intel,2,2.3,2,8,DDR4,2133,Intel HD Graphics 520,N,1,256,SSH,,Up to 6th Gen IntelÂ CoreÈ i7 processor;Up to 16 GB DDR4 DIMM;Up to 512 GB SSD,10,Windows 10 Pro 64,1,Black,N
-Lenovo,ThinkPad X1 Yoga Convertible,3023,14,2560,1440,Y,N,Y,1.36,Intel,2,2.3,2,4,LPDDR3,1866,Intel HD Graphics 520,N,1,256,SSD,,Up to IntelÂ CoreÈ i7 vProÈ Processor;Up to 16 GB DDR3;Up to 1 TB PCIe NVMe SSD,11,Windows 10 Home 64,1,Black,N
-Microsoft,Microsoft Surface Book,1499,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,N,1,128,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Book,1699,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,N,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Book,1899,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,Y,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Pro 4 ,899,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.4,3,4,,,Intel HD Graphics 520,N,1,128,SSD,,,9,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Pro 4 ,1199,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.4,3,8,,,Intel HD Graphics 520,N,1,256,SSD,,,9,Windows 10 Pro,1,Silver,Y
 Acer,Acer Aspire R13 R7-372T-79PS,1998,13.3,1920,1080,Y,N,N,1.6,Intel,2,2.5,4,8,DDR3,,Intel HD Graphics 520,N,1,512,SSD,,,10,Windows 10 Home,2,Black,N
 Acer,Acer Aspire R14 R5-471T-78U5,1498,14,1920,1080,Y,N,Y,1.9,Intel,2,2.5,4,8,DDR3,,Intel HD Graphics 520,N,1,256,SSD,,,10,Windows 10 Home,2,Black,N
-Asus,UX305UA-FB004T,1898,13.3,1920,1080,Y,N,N,1.3,Intel,2,2.5,4,8,,,Intel HD Graphics 520,N,1,512,SSD,,,10,Win10,1,Black,N
-HP,HP ENVY Notebook - 13-d117tu,1899,13.3,3200,1800,Y,Y,N,1.39,Intel,2,2.5,4,8,LPDDR3,1600,Intel HD Graphics 520,N,1,512,SSD,,,7,Windows 10 Home 64,1,Silver,N
-HP,HP ENVY Notebook 13-d022TU,1699,13.3,3200,1800,Y,Y,N,1.27,Intel,2,2.5,4,8,LDDR3,,Intel HD Graphics 520,N,1,256,SSD,,,7,Windows 10 Home 64,1,Natural silver,N
-Microsoft,Microsoft Surface Book,2099,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,8,,,Intel HD Graphics 520,Y,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Book,2699,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,16,,,Intel HD Graphics 520,Y,1,512,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Book,3199,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,16,,,Intel HD Graphics 520,Y,1,1024,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Apple ,MacBook,1788,12,2304,1440,Y,N,N,0.92,Intel,2,1.1,1,8,LPDDR3,1600,Intel HD Graphics 5300,N,0,256,SSD,,,9,OS X,0,"Silver, Gold, Space grey",N
-Apple ,MacBook,2288,12,2304,1440,Y,N,N,0.92,Intel,2,1.2,1,8,LPDDR3,1600,Intel HD Graphics 5300,N,0,512,SSD,,,9,OS X,0,"Silver, Gold, Space grey",N
-Dell,Inspiron 13 7000 Series 2-in-1 (7348),949,13.3,1366,768,N,N,Y,1.67,Intel,2,2.2,2,4,DDR3L,1600,Intel HD Graphics 5500,N,0,500,HDD,5400,Nil,6,Windows 10 Home 64,1,Silver,N
-Apple ,11-inch MacBook Air,1188,11.6,1366,768,N,N,N,1.08,Intel,2,1.6,2,4,LPDDR3,1600,Intel HD Graphics 6000,N,1,128,SSD,,,9,OS X,0,,N
-Apple ,11-inch MacBook Air,1488,11.6,1366,768,N,N,N,1.08,Intel,2,1.6,2,4,LPDDR3,1600,Intel HD Graphics 6000,N,1,256,SSD,,Configurable to 512GB flash storage.,9,OS X,0,,N
-Apple ,13-inch MacBook Air,1328,13.3,1440,900,N,N,N,1.35,Intel,2,1.6,2,4,LPDDR3,1600,Intel HD Graphics 6000,N,1,128,SSD,,,12,OS X,0,,N
-Apple ,13-inch MacBook Air,1618,13.3,1440,900,N,N,N,1.35,Intel,2,1.6,2,4,LPDDR3,1600,Intel HD Graphics 6000,N,1,256,SSD,,Configurable to 512GB flash storage.,12,OS X,0,,N
-Microsoft,Microsoft Surface Pro 4 ,1599,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.2,4,8,,,Intel Iris Graphics 540,N,2,256,SSD,,,9,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Pro 4 ,1799,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.2,4,16,,,Intel Iris Graphics 540,N,2,256,SSD,,,9,Windows 10 Pro,1,Silver,Y
-Apple ,13-inch MacBook Pro with Retina display,1688,13.3,2560,1600,Y,N,N,1.58,Intel,2,2.7,3,8,LPDDR3,1866,Intel Iris Graphics 6100,N,1,128,SSD,,,10,OS X,0,,N
-Apple ,13-inch MacBook Pro with Retina display,1988,13.3,2560,1600,Y,N,N,1.58,Intel,2,2.7,3,8,LPDDR3,1866,Intel Iris Graphics 6100,N,1,256,SSD,,,10,OS X,0,,N
-Apple ,13-inch MacBook Pro with Retina display,2388,13.3,2560,1600,Y,N,N,1.58,Intel,2,2.9,3,8,LPDDR3,1866,Intel Iris Graphics 6100,N,1,512,SSD,,Configurable to 1TB flash storage.,10,OS X,0,,N
-Apple ,15-inch MacBook Pro with Retina display,2688,15.4,2880,1800,Y,N,N,2.04,Intel,4,2.2,5,16,DDR3L,1600,Intel Iris Pro Graphics 5200,N,1,256,SSD,,Configurable to 1TB flash storage.,9,OS X,0,,N
-Apple ,15-inch MacBook Pro with Retina display,3288,15.4,2880,1800,Y,N,N,2.04,Intel,4,2.5,5,16,DDR3L,1600,Intel Iris Pro Graphics 5200,N,1,512,SSD,,Configurable to 1TB flash storage.,9,OS X,0,,N
-MSI,MSI CX61 2PC,999,15.6,1366,768,N,N,N,2.4,Intel,2,2.5,3,4,DDR3,,NVIDIA GeForce GT 820M,Y,0,750,HDD,,,3,Windows 8.1 64,0,,N
 Acer,Acer E5-474G-519V,899,14,1366,768,N,N,N,2.1,Intel,2,2.3,2,4,DDR3L,,NVIDIA GeForce GT 920M,Y,0,1024,HDD,,,5,Windows 10 Home,1,Iron,N
 Acer,Acer Aspire E5-474G-51WB,999,14,1366,768,N,N,N,2.1,Intel,2,2.3,2,8,DDR3L,,NVIDIA GeForce GT 940M,Y,1,1024,HDD,,,5,Windows 10 Home,1,Iron,N
-Asus,ZenBook UX303UB-R4074T,1398,13.3,1920,1080,Y,N,N,1.45,Intel,2,2.3,2,8,,,NVIDIA GeForce GT 940M,Y,1,1024,HDD,,,7,Win10,2,Gray,N
-Lenovo,IdeaPad 500S-14ISK 80Q3005ESB,1049,14,1920,1080,Y,N,N,1.8,Intel,2,2.3,2,8,DDR3L,1600,NVIDIA GeForce GT 940M,Y,1,500,HDD,5400,Up to 6th Generation IntelÂ CoreÈ i7 Processor;Up to 1 TB HDD / Up to 1 TB SSHD / Up to 256 GB SSD,4.5,Windows 10 Home 64,1,"Black, Red",N
-Asus,Asus K501UB-FI043T,1598,15.6,3840,2160,Y,Y,N,2,Intel,2,2.5,4,8,,,NVIDIA GeForce GT 940M,Y,1,128,SSD,,,7,Win10,3,Black,N
-Asus,ZenBook UX303UB-DQ028T,1698,13.3,3200,1800,Y,Y,N,1.45,Intel,2,2.5,4,8,,,NVIDIA GeForce GT 940M,Y,1,1024,HDD,,,7,Win10,2,Gray,N
-Lenovo,Lenovo YOGA 700-14ISK 80QD00CBSB,1616.98,14,1920,1080,Y,N,Y,1.6,Intel,2,2.5,4,8,DDR3L,1600,NVIDIA GeForce GT 940M,Y,1,256,SSD,,Nil,7,Windows 10 Home 64,1,Black,N
 Acer,Acer Aspire E5-491G-722A,1298,14,1920,1080,Y,N,N,2.3,Intel,4,2.6,5,16,DDR3L,,NVIDIA GeForce GT 940M,Y,1,1024,HDD,,,4,Windows 10 Home,1,White,N
-HP,HP OMEN Notebook PC 15-5024TX,2299,15.6,1920,1080,Y,N,Y,2.1,Intel,4,2.5,5,8,DDR3L,1600,NVIDIA GeForce GTX 860M,Y,2,128,SSD,,,3,Windows 8.1 64,0,,N
-Asus,Asus K501UX-DM079T,1698,15.6,1920,1080,Y,N,N,2,Intel,2,2.5,4,8,,,NVIDIA GeForce GTX 950M,Y,2,128,SSD,,,5,Win10,1,Black,N
-Asus,Asus K501UX-FI097T,1998,15.6,3840,2160,Y,Y,N,2,Intel,2,2.5,4,16,,,NVIDIA GeForce GTX 950M,Y,2,256,SSD,,,5,Win10,1,Black,N
-HP,HP ENVY Notebook - 15-ae139TX,1599,15.6,1920,1080,Y,N,N,2.12,Intel,2,2.5,4,8,DDR3L,1600,NVIDIA GeForce GTX 950M,Y,2,256,SSD,,,5,Windows 10 Home 64,1,Silver,N
-HP,HP Pavillon Gaming Notebook 15-ak0251TX,1499,15.6,1920,1080,Y,N,N,2.32,Intel,4,2.6,5,8,DDR3L,,NVIDIA GeForce GTX 950M,Y,2,1024,HDD,5400,,3,Windows 10 Home 64,1,Twinkle black,N
-Lenovo,Ideapad 700-15ISK 80RU008CSB,1408,15.6,1920,1080,Y,N,N,2.3,Intel,4,2.6,5,8,DDR4,2133,NVIDIA GeForce GTX 950M,Y,2,500,HDD,5400,Nil,4,Windows 10 Home 64,1,Black,N
-Dell,Alienware 13 R2,1699,13,1366,768,N,N,N,2.06,Intel,2,2.3,2,8,DDR3L,1600,NVIDIA GeForce GTX 960M,Y,2,500,HDD,5400,Up to 6th Generation IntelÂ CoreÈ i7 Processor; Up to 16 GB Memory;Up to 256 GB SSD,10.5,Windows 10 Home 64,1,Black,N
-Lenovo,Lenovo Ideapad Y700-15 80NV00BHSB,1499,15.6,1920,1080,Y,N,N,2.6,Intel,4,2.3,4,4,DDR4,2133,NVIDIA GeForce GTX 960M,Y,2,1024,HDD,5400,Up to 6th Generation IntelÂ Quad-Core i7 Processor;Up to NVIDIAÂ GTX 960M 4 GB GDDR5;Up to 16 GB DDR4;Up to 1 TB HDD; Up to 512 GB SSD; Up to 1 TB + 8 GB SSHD;,5,Windows 10 Home 64,1,Black,N
 Acer,Acer Aspire V Nitro VN7-592G-7633,1798,15.6,1920,1080,Y,N,N,2.3,Intel,4,2.6,5,16,DDR4,,NVIDIA GeForce GTX 960M,Y,2,8,SSD,,,5,Windows 10 Home,2,Black,N
 Acer,Acer Aspire V Nitro VN7-592G-79KR,1998,15.6,1920,1080,Y,N,N,2.3,Intel,4,2.6,5,16,DDR4,,NVIDIA GeForce GTX 960M,Y,2,128,SSD,,,5,Windows 10 Home,2,Black,N
 Acer,Acer Aspire V Nitro VN7-792G-7431,2198,17.3,1920,1080,Y,N,N,3,Intel,4,2.6,5,16,DDR4,,NVIDIA GeForce GTX 960M,Y,2,128,SSD,,,5,Windows 10 Home,1,Black,N
-Dell,Inspiron 15 7000 Series (IntelÂ),1899,15.6,3840,2160,Y,Y,Y,2.72,Intel,4,2.6,5,8,DDR3L,1600,NVIDIA GeForce GTX 960M,Y,2,1024,HDD,5400,Up to 6th Gen IntelÂ CoreÈ i7,11,Windows 10 Home 64,1,Black,N
-Dell,XPS 15 (9550) ,2399,15.6,1920,1080,Y,N,N,0.78,Intel,4,2.6,5,8,DDR4,2133,NVIDIA GeForce GTX 960M,Y,2,1024,HDD,5400,Up to 16 GB Memory; Up to 512 SSD,6,Windows 10 Home 64,1,Silver,N
-Dell,Alienware 15 R2 ,2199,15.6,1920,1080,Y,N,N,3.21,Intel,4,2.3,4,8,DDR4,2133,NVIDIA GeForce GTX 965M ,Y,2,1024,HDD,7200,Up to 6th Generation IntelÂ CoreÈ i7 Processor; Up to 16 GB Memory,6,Windows 10 Home 64,1,Black,N
 Acer,Acer Predator G9-591-76JC,2598,15.6,3840,2160,Y,Y,N,3.4,Intel,4,2.6,5,16,,,NVIDIA GeForce GTX 970M,Y,2,128,SSD,,,5,Win10,1,Black,N
-MSI,MSI GT80 2QE TITAN SLI,2499,17.3,1920,1080,Y,N,N,2.9,Intel,4,2.6,5,8,DDR4,2133,NVIDIA GeForce GTX 970M,Y,2,128,SSD,,,5,Windows 10 Home / Windows 10 Pro,2,Black,N
-Dell,Alienware 17 R3 ,2899,17.3,1920,1080,Y,N,N,3.78,Intel,4,2.6,5,16,DDR4,2133,NVIDIA GeForce GTX 970M ,Y,2,1024,HDD,7200,Up to 512 GB SSD (Boot) + 1 TB HDD; Up to NVIDIAÂ GeForceÂ GTX 980M with 8GB GDDR5,6,Windows 10 Home 64,1,Black,N
-Lenovo,ThinkPad W550s 20E1000USG,2549,15.6,1920,1080,Y,N,N,2.1,Intel,2,2.3,2,4,DDR3L,1600,NVIDIA Quadro K620M,Y,1,500,HDD,7200,Up to 1 TB HDD / Up to 512 GB SSD,12,Windows 7 Professional 64 ,3,Black,N
+Apple ,13-inch MacBook Pro,1488,13.3,1280,800,N,N,N,1.62,Intel,2,2.5,2,4,LPDDR3,1600,Intel HD Graphics 4000,N,0,500,HDD,5400,,7,OS X,0,,N
+Apple ,MacBook 256G,1788,12,2304,1440,Y,N,N,0.92,Intel,2,1.1,1,8,LPDDR3,1600,Intel HD Graphics 5300,N,0,256,SSD,,,9,OS X,0,"Silver, Gold, Space grey",N
+Apple ,MacBook 512G,2288,12,2304,1440,Y,N,N,0.92,Intel,2,1.2,1,8,LPDDR3,1600,Intel HD Graphics 5300,N,0,512,SSD,,,9,OS X,0,"Silver, Gold, Space grey",N
+Apple ,11-inch MacBook Air 128G,1188,11.6,1366,768,N,N,N,1.08,Intel,2,1.6,2,4,LPDDR3,1600,Intel HD Graphics 6000,N,1,128,SSD,,,9,OS X,0,,N
+Apple ,11-inch MacBook Air 256G,1488,11.6,1366,768,N,N,N,1.08,Intel,2,1.6,2,4,LPDDR3,1600,Intel HD Graphics 6000,N,1,256,SSD,,Configurable to 512GB flash storage.,9,OS X,0,,N
+Apple ,13-inch MacBook Air 128G,1328,13.3,1440,900,N,N,N,1.35,Intel,2,1.6,2,4,LPDDR3,1600,Intel HD Graphics 6000,N,1,128,SSD,,,12,OS X,0,,N
+Apple ,13-inch MacBook Air 256G,1618,13.3,1440,900,N,N,N,1.35,Intel,2,1.6,2,4,LPDDR3,1600,Intel HD Graphics 6000,N,1,256,SSD,,Configurable to 512GB flash storage.,12,OS X,0,,N
+Apple ,13-inch MacBook Pro with Retina display 128G,1688,13.3,2560,1600,Y,N,N,1.58,Intel,2,2.7,3,8,LPDDR3,1866,Intel Iris Graphics 6100,N,1,128,SSD,,,10,OS X,0,,N
+Apple ,13-inch MacBook Pro with Retina display 256G,1988,13.3,2560,1600,Y,N,N,1.58,Intel,2,2.7,3,8,LPDDR3,1866,Intel Iris Graphics 6100,N,1,256,SSD,,,10,OS X,0,,N
+Apple ,13-inch MacBook Pro with Retina display 512G,2388,13.3,2560,1600,Y,N,N,1.58,Intel,2,2.9,3,8,LPDDR3,1866,Intel Iris Graphics 6100,N,1,512,SSD,,Configurable to 1TB flash storage.,10,OS X,0,,N
+Apple ,15-inch MacBook Pro with Retina display 256G,2688,15.4,2880,1800,Y,N,N,2.04,Intel,4,2.2,5,16,DDR3L,1600,Intel Iris Pro Graphics 5200,N,1,256,SSD,,Configurable to 1TB flash storage.,9,OS X,0,,N
+Apple ,15-inch MacBook Pro with Retina display 512G,3288,15.4,2880,1800,Y,N,N,2.04,Intel,4,2.5,5,16,DDR3L,1600,Intel Iris Pro Graphics 5200,N,1,512,SSD,,Configurable to 1TB flash storage.,9,OS X,0,,N
+Asus,ZenBook UX305CA-FC004T,1098,13.3,1920,1080,Y,N,N,1.2,Intel,2,0.9,2,4,,,Intel HD Graphics 515,N,0,128,SSD,,,10,Win10,2,Black,N
+Asus,ZenBook UX305CA-FC024T,1398,13.3,1920,1080,Y,N,N,1.2,Intel,2,1.1,2,8,,,Intel HD Graphics 515,N,0,256,SSD,,,10,Win10,2,White,N
+Asus,ZenBook UX305CA-FB055T,1898,13.3,3200,1800,Y,Y,N,1.2,Intel,2,1.2,2,8,,,Intel HD Graphics 515,N,0,512,SSD,,,10,Win10,2,Black,N
+Asus,Asus X456UB-WX006T,999,14,1366,768,N,N,N,2,Intel,2,2.3,2,8,,,Intel HD Graphics 520,N,1,1024,HDD,,,4,Win10,1,Black,N
+Asus,UX305UA-FB004T,1898,13.3,1920,1080,Y,N,N,1.3,Intel,2,2.5,4,8,,,Intel HD Graphics 520,N,1,512,SSD,,,10,Win10,1,Black,N
+Asus,ZenBook UX303UB-R4074T,1398,13.3,1920,1080,Y,N,N,1.45,Intel,2,2.3,2,8,,,NVIDIA GeForce GT 940M,Y,1,1024,HDD,,,7,Win10,2,Gray,N
+Asus,Asus K501UB-FI043T,1598,15.6,3840,2160,Y,Y,N,2,Intel,2,2.5,4,8,,,NVIDIA GeForce GT 940M,Y,1,128,SSD,,,7,Win10,3,Black,N
+Asus,ZenBook UX303UB-DQ028T,1698,13.3,3200,1800,Y,Y,N,1.45,Intel,2,2.5,4,8,,,NVIDIA GeForce GT 940M,Y,1,1024,HDD,,,7,Win10,2,Gray,N
+Asus,Asus K501UX-DM079T,1698,15.6,1920,1080,Y,N,N,2,Intel,2,2.5,4,8,,,NVIDIA GeForce GTX 950M,Y,2,128,SSD,,,5,Win10,1,Black,N
+Asus,Asus K501UX-FI097T,1998,15.6,3840,2160,Y,Y,N,2,Intel,2,2.5,4,16,,,NVIDIA GeForce GTX 950M,Y,2,256,SSD,,,5,Win10,1,Black,N
+Dell,Inspiron 14 5000 Series (Intelå) - 5459 ,949,14,1366,768,N,N,N,2,Intel,2,2.3,2,4,DDR3L,1600,AMD Radeoné R5 M335 2GB DDR3,Y,0,500,HDD,5400,Up to 1 TB HDD;Up to AMD Radeoné R5 M335 4GB DDR3;,8,Windows 10 Home 64,1,"Red, White, Silver, Black",N
+Dell,Inspiron 11 3000 Series (3162),349,11.6,1366,768,N,N,N,1.18,Intel,2,1.6,0,2,DDR3L,1600,Intel HD Graphics,N,0,32,EMMC,,Up to 4 GB DDR3L; Up to 500 GB HDD,9.5,Windows 10 Home 64,1,"Blue, Red, White",N
+Dell,XPS 12,2099,12.5,3840,2160,Y,Y,Y,1.27,Intel,2,1.1,2,8,DDR3L,1600,Intel HD Graphics 515,N,0,256,SSD,,Up to 512 GB SSD;Up to 6th Generation Intelå Coreé m7 6Y75 ,5,Windows 10 Home 64,1,Black,Y
+Dell,XPS 13(9350) ,1399,13.3,1920,1080,Y,N,N,1.2,Intel,2,2.3,2,4,LPDDR3,1866,Intel HD Graphics 520,N,1,128,SSD,,Up to 8 GB Memory; Up to 256 SSD; Up to 6th Generation Intel Core i7-6560U ,8,Windows 10 Home 64,1,Silver,N
+Dell,Inspiron 13 7000 Series 2-in-1 (7348),949,13.3,1366,768,N,N,Y,1.67,Intel,2,2.2,2,4,DDR3L,1600,Intel HD Graphics 5500,N,0,500,HDD,5400,Nil,6,Windows 10 Home 64,1,Silver,N
+Dell,Alienware 13 R2,1699,13,1366,768,N,N,N,2.06,Intel,2,2.3,2,8,DDR3L,1600,NVIDIA GeForce GTX 960M,Y,2,500,HDD,5400,Up to 6th Generation Intelå Coreé i7 Processor; Up to 16 GB Memory;Up to 256 GB SSD,10.5,Windows 10 Home 64,1,Black,N
+Dell,Inspiron 15 7000 Series (Intelå),1899,15.6,3840,2160,Y,Y,Y,2.72,Intel,4,2.6,5,8,DDR3L,1600,NVIDIA GeForce GTX 960M,Y,2,1024,HDD,5400,Up to 6th Gen Intelå Coreé i7,11,Windows 10 Home 64,1,Black,N
+Dell,XPS 15 (9550) ,2399,15.6,1920,1080,Y,N,N,0.78,Intel,4,2.6,5,8,DDR4,2133,NVIDIA GeForce GTX 960M,Y,2,1024,HDD,5400,Up to 16 GB Memory; Up to 512 SSD,6,Windows 10 Home 64,1,Silver,N
+Dell,Alienware 15 R2 ,2199,15.6,1920,1080,Y,N,N,3.21,Intel,4,2.3,4,8,DDR4,2133,NVIDIA GeForce GTX 965M ,Y,2,1024,HDD,7200,Up to 6th Generation Intelå Coreé i7 Processor; Up to 16 GB Memory,6,Windows 10 Home 64,1,Black,N
+Dell,Alienware 17 R3 ,2899,17.3,1920,1080,Y,N,N,3.78,Intel,4,2.6,5,16,DDR4,2133,NVIDIA GeForce GTX 970M ,Y,2,1024,HDD,7200,Up to 512 GB SSD (Boot) + 1 TB HDD; Up to NVIDIAå GeForceå GTX 980M with 8GB GDDR5,6,Windows 10 Home 64,1,Black,N
+HP,HP Pavilion x2 Detachable 10-n101TU,549,10.1,1280,800,N,N,Y,1.13,Intel,4,1.44,0,2,DDR3L,1600,Intel HD Graphics,N,0,64,eMMC,,,8,Windows 10 Home 64,1,Blizzard white,Y
+HP,HP EliteBook Folio 9480m Notebook PC,2999,14,1366,768,N,N,N,1.61,Intel,2,2.1,3,8,DDR3L,1600,Intel HD Graphics 4400,N,0,256,SSD,,,5,Windows 7 Pro 64,3,,N
+HP,HP Elite x2 1012 G1 LTE (With travel keyboard),2099,12,1920,1280,Y,N,Y,1.2,Intel,2,1.1,2,8,LPDDR3,1866,Intel HD Graphics 515,N,0,256,SSD,,,7,Windows 10 Pro 64,1,,Y
+HP,HP Spectre x2 Detachable 12-a017TU,1999,12,1920,1280,Y,Y,Y,1.19,Intel,2,1.2,2,8,LDDR3,,Intel HD Graphics 515,N,0,256,SSD,,,7,Windows 10 Home 64,1,Natural silver,Y
+HP,HP Notebook 14-ac135TX,899,14,1366,768,N,N,N,1.94,Intel,2,2.3,2,4,DDR3L,,Intel HD Graphics 520,N,1,1024,HDD,5400,,4,Windows 10 Home 64,1,Jack black,N
+HP,HP Notebook 15-ac113TX,899,15.6,1366,768,N,N,N,2.19,Intel,2,2.3,2,4,DDR3L,1600,Intel HD Graphics 520,N,1,1024,HDD,5400,,4,Windows 10 Home 64,1,Jack black,N
+HP,HP Pavillon Notebook 14-ab170TX,849,14,1366,768,N,N,N,1.96,Intel,2,2.3,2,4,DDR3L,1600,Intel HD Graphics 520,N,1,500,HDD,5400,,4,Windows 10 Home 64,1,Natural silver,N
+HP,HP ENVY Notebook - 13-d117tu,1899,13.3,3200,1800,Y,Y,N,1.39,Intel,2,2.5,4,8,LPDDR3,1600,Intel HD Graphics 520,N,1,512,SSD,,,7,Windows 10 Home 64,1,Silver,N
+HP,HP ENVY Notebook 13-d022TU,1699,13.3,3200,1800,Y,Y,N,1.27,Intel,2,2.5,4,8,LDDR3,,Intel HD Graphics 520,N,1,256,SSD,,,7,Windows 10 Home 64,1,Natural silver,N
+HP,HP OMEN Notebook PC 15-5024TX,2299,15.6,1920,1080,Y,N,Y,2.1,Intel,4,2.5,5,8,DDR3L,1600,NVIDIA GeForce GTX 860M,Y,2,128,SSD,,,3,Windows 8.1 64,0,,N
+HP,HP ENVY Notebook - 15-ae139TX,1599,15.6,1920,1080,Y,N,N,2.12,Intel,2,2.5,4,8,DDR3L,1600,NVIDIA GeForce GTX 950M,Y,2,256,SSD,,,5,Windows 10 Home 64,1,Silver,N
+HP,HP Pavillon Gaming Notebook 15-ak0251TX,1499,15.6,1920,1080,Y,N,N,2.32,Intel,4,2.6,5,8,DDR3L,,NVIDIA GeForce GTX 950M,Y,2,1024,HDD,5400,,3,Windows 10 Home 64,1,Twinkle black,N
 HP,HP ZBook Studio G3 Mobile Workstation,3450,15.6,1920,1080,Y,N,Y,2,Intel,4,2.7,5,16,DDR4,2133,NVIDIA Quadro M1000M,Y,2,256,SSD,,,5,Windows 7 Pro 64,3,,N
+Lenovo,ThinkPad E465 ,660,14,1366,768,N,N,N,1.91,AMD,2,1.6,2,4,DDR3L,1600,AMD Radeon R5 (Carrizo),N,0,500,HDD,5400,Up to AMD A10-8700P Processor;Up to 16 GB DDR3L;Up to 1 TB HDD 5400 rpm / 500 GB HDD 7200 rpm / 500 GB HDD 5400 rpm / 500 GB HDD 5400 rpm (8 GB Hybrid) / 192 GB SSD;,6.5,Windows 10 Home 64,1,Black,N
+Lenovo,Ideapad 500-15 80K4001TSB,901.98,15.6,1920,1080,Y,N,N,2.3,AMD,2,1.8,2,4,DDR3L,1600,AMD Radeon R5 M330 2GB,Y,0,1024,HDD,5400,Up to AMD Carrizo FX-8800P APU;Up to 16 GB DDR3L,4,Windows 10 Home 64,1,"Black, White",N
+Lenovo,Lenovo S41-35 80JW0014SB,619,14,1366,768,N,N,N,1.68,AMD,4,1.8,1,4,DDR3L,1600,AMD Radeon R5 M330 2GB,Y,0,500,HDD,5400,Up to AMD A8-7410 Processor;Up to 8GB DDR3L;Up to 1TB HDD or up to 1TB SSHD,6,Windows 10 Home 64,1,Silver,N
+Lenovo,Ideapad 300-14ISK 80Q6009SSB,899,14,1366,768,N,N,N,2.1,Intel,2,2.3,2,4,DDR3L,1600,AMD Radeon R5 M330 2GB,Y,0,1024,HDD,5400,Up to 6th Generation Intelå Coreé i Processor;Up to 1 TB HDD or SSHD (Intelå Coreé i supports up to 128 GB SSD),4,Windows 10 Home 64,1,"Black, Silver",N
+Lenovo,IdeaPad 100S-11 80R2002CSB ,284.05,11.6,1366,768,N,N,N,1,Intel,4,1.33,0,2,DDR3L,1600,Intel HD Graphics,N,0,32,EMMC,,Nil,8,Windows 10 Home 32,1,"Silver, Red",N
+Lenovo,ThinkPad L460 ,829,14,1366,768,N,N,N,1.9,Intel,2,2.3,2,4,DDR3L,1600,Intel HD Graphics 520,N,1,500,HDD,7200,Up to 6th Gen Intelå Coreé i7 processor;Up to 32 GB Memory,8.7,Windows 10 Home 64,1,Black,N
+Lenovo,ThinkPad T460 ,1534,14,1366,768,N,N,N,1.71,Intel,2,2.3,2,4,DDR3L,1600,Intel HD Graphics 520,N,1,500,HDD,7200,Up to 6th Gen Intelå Coreé i7 processor;Up to 32 GB Memory;Up to NVIDIAå GeForceå 940MX,13,Windows 10 Home 64,1,Black,N
+Lenovo,Lenovo YOGA 900-13 80MK00EHSB ,1999,13.3,3200,1800,Y,N,Y,1.3,intel,2,2.3,2,8,LPDDR3,1600,Intel HD Graphics 520,N,1,256,SSD,,Up to 6th Generation Intelå Coreé i7 Processor;Up to 16 GB LP-DDR3L;Up to 512 GB Samsung SSD,10,Windows 10 Home 64,1,"Silver, Clementine Orange, Champagne Gold",N
+Lenovo,ThinkPad Yoga 260 Convertible,1749,12.5,1920,1080,Y,N,Y,1.3,Intel,2,2.3,2,8,DDR4,2133,Intel HD Graphics 520,N,1,256,SSH,,Up to 6th Gen Intelå Coreé i7 processor;Up to 16 GB DDR4 DIMM;Up to 512 GB SSD,10,Windows 10 Pro 64,1,Black,N
+Lenovo,ThinkPad X1 Yoga Convertible,3023,14,2560,1440,Y,N,Y,1.36,Intel,2,2.3,2,4,LPDDR3,1866,Intel HD Graphics 520,N,1,256,SSD,,Up to Intelå Coreé i7 vProé Processor;Up to 16 GB DDR3;Up to 1 TB PCIe NVMe SSD,11,Windows 10 Home 64,1,Black,N
+Lenovo,IdeaPad 500S-14ISK 80Q3005ESB,1049,14,1920,1080,Y,N,N,1.8,Intel,2,2.3,2,8,DDR3L,1600,NVIDIA GeForce GT 940M,Y,1,500,HDD,5400,Up to 6th Generation Intelå Coreé i7 Processor;Up to 1 TB HDD / Up to 1 TB SSHD / Up to 256 GB SSD,4.5,Windows 10 Home 64,1,"Black, Red",N
+Lenovo,Lenovo YOGA 700-14ISK 80QD00CBSB,1616.98,14,1920,1080,Y,N,Y,1.6,Intel,2,2.5,4,8,DDR3L,1600,NVIDIA GeForce GT 940M,Y,1,256,SSD,,Nil,7,Windows 10 Home 64,1,Black,N
+Lenovo,Ideapad 700-15ISK 80RU008CSB,1408,15.6,1920,1080,Y,N,N,2.3,Intel,4,2.6,5,8,DDR4,2133,NVIDIA GeForce GTX 950M,Y,2,500,HDD,5400,Nil,4,Windows 10 Home 64,1,Black,N
+Lenovo,Lenovo Ideapad Y700-15 80NV00BHSB,1499,15.6,1920,1080,Y,N,N,2.6,Intel,4,2.3,4,4,DDR4,2133,NVIDIA GeForce GTX 960M,Y,2,1024,HDD,5400,Up to 6th Generation Intelå Quad-Core i7 Processor;Up to NVIDIAå GTX 960M 4 GB GDDR5;Up to 16 GB DDR4;Up to 1 TB HDD; Up to 512 GB SSD; Up to 1 TB + 8 GB SSHD;,5,Windows 10 Home 64,1,Black,N
+Lenovo,ThinkPad W550s 20E1000USG,2549,15.6,1920,1080,Y,N,N,2.1,Intel,2,2.3,2,4,DDR3L,1600,NVIDIA Quadro K620M,Y,1,500,HDD,7200,Up to 1 TB HDD / Up to 512 GB SSD,12,Windows 7 Professional 64 ,3,Black,N
 Lenovo,ThinkPad P50s,2517,15.6,1920,1080,Y,N,N,2.27,Intel,2,2.4,3,4,DDR3L,1600,NVIDIA Quadro M500M,Y,1,500,HDD,7200,Nil,12,Windows 10 Home 64,1,Black,N
+Microsoft,Microsoft Surface Pro 4 m3 4G,899,12.3,2736,1824,Y,N,Y,0.79,Intel,2,0.9,2,4,,,Intel HD Graphics 515,N,0,128,SSD,,,9,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book i5 128G,1499,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,N,1,128,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book i5 256G,1699,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,N,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book i5 256G GT940M,1899,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,Y,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Pro 4 i5 4G,899,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.4,3,4,,,Intel HD Graphics 520,N,1,128,SSD,,,9,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Pro 4 i5 8G,1199,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.4,3,8,,,Intel HD Graphics 520,N,1,256,SSD,,,9,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book i7 256G GT940M,2099,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,8,,,Intel HD Graphics 520,Y,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book i7 512G GT940M,2699,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,16,,,Intel HD Graphics 520,Y,1,512,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book i7 1024G GT940M,3199,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,16,,,Intel HD Graphics 520,Y,1,1024,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Pro 4 i7 8G RAM,1599,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.2,4,8,,,Intel Iris Graphics 540,N,2,256,SSD,,,9,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Pro 4 i7 16G RAM,1799,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.2,4,16,,,Intel Iris Graphics 540,N,2,256,SSD,,,9,Windows 10 Pro,1,Silver,Y
+MSI,MSI CX61 2PC,999,15.6,1366,768,N,N,N,2.4,Intel,2,2.5,3,4,DDR3,,NVIDIA GeForce GT 820M,Y,0,750,HDD,,,3,Windows 8.1 64,0,,N
+MSI,MSI GT80 2QE TITAN SLI,2499,17.3,1920,1080,Y,N,N,2.9,Intel,4,2.6,5,8,DDR4,2133,NVIDIA GeForce GTX 970M,Y,2,128,SSD,,,5,Windows 10 Home / Windows 10 Pro,2,Black,N
+Toshiba,Satellite P30W-B200S Ultrabook,2399,13.3,1920,1080,Y,N,Y,0.91,Intel,2,1.7,2,8,DDR3L,1600,Intel HD Graphics 4400,N,0,128,SSD,,,7,Windows 8.1,1,Brushed Aluminium Silver,Y
