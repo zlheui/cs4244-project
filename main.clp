@@ -107,8 +107,9 @@
 	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
-	(if (= ?a 4) then (focus PROGRAMMING)
-		else (if (= ?a 5) then (focus 3DGAME)))
+	(if (= ?a 2) then (focus MUSIC)
+	else (if (= ?a 4) then (focus PROGRAMMING)
+		else (if (= ?a 5) then (focus 3DGAME))))
 	(modify ?qn(converted Y))
 )
 
