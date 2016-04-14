@@ -107,21 +107,22 @@
 	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
-	(if (= ?a 2) then (focus MUSIC) (assert (initial-music-requirement))
+	(if (= ?a 1) then (focus OFFICE) (assert (initial-office-requirement))
+		else (if (= ?a 2) then (focus MUSIC) (assert (initial-music-requirement))
 		else (if (= ?a 3) then (focus CASUALGAME) (assert (initial-casualgame-requirement))
 		else (if (= ?a 4) then (focus PROGRAMMING) (assert (initial-programming-requirement))
 		else (if (= ?a 5) then (focus 3DGAME) (assert (initial-3dgame-requirement))
-	))))
+	)))))
 	(modify ?qn(converted Y))
 )
 
 (deffacts MAIN::load-question-descriptions
 	(qn-dscpt(id 0)(
 		content "What is the new computer mainly used for?%n 
-			1. Office work%n 
-			2. Music and movies%n 
-			3. Programming%n 
-			4. Photo, video processing%n 
+			1. Office work 
+			2. Entertainment 
+			3. Web Browsing 
+			4. Development 
 			5. Gaming%nans: "))
 )
 
