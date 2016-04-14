@@ -1,20 +1,7 @@
 ; 3DGAME module
-
-(defmodule 3DGAME 
-	;(import MAIN deftemplate laptop-requirement)
-	(import MAIN ?ALL)
+(defmodule 3DGAME
+	(import MAIN deftemplate qn-dscpt qn-ans laptop-requirement)
 )
-
-;(deftemplate 3DGAME::qn-dscpt
-;	(slot id (type INTEGER))
-;	(slot content (type STRING))
-;)
-
-;(deftemplate 3DGAME::qn-ans
-;	(slot id (type INTEGER))
-;	(slot ans (default NIL))
-;	(slot converted (type SYMBOL)(default N))
-;)
 
 (defrule 3DGAME::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
