@@ -107,26 +107,90 @@
 	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
-	(if (= ?a 1) then (focus OFFICE) (assert (initial-office-requirement))
-		else (if (= ?a 2) then (focus MUSIC) (assert (initial-music-requirement))
-		else (if (= ?a 3) then (focus CASUALGAME) (assert (initial-casualgame-requirement))
-		else (if (= ?a 4) then (focus PROGRAMMING) (assert (initial-programming-requirement))
-		else (if (= ?a 5) then (focus 3DGAME) (assert (initial-3dgame-requirement))
-	)))))
 	(modify ?qn(converted Y))
+;	(if (= ?a 1) then (focus OFFICE) (assert (initial-office-requirement))
+;		else (if (= ?a 2) then (focus MUSIC) (assert (initial-music-requirement))
+;		else (if (= ?a 3) then (focus CASUALGAME) (assert (initial-casualgame-requirement))
+;		else (if (= ?a 4) then (focus PROGRAMMING) (assert (initial-programming-requirement))
+;		else (if (= ?a 5) then (focus 3DGAME) (assert (initial-3dgame-requirement))
+;	)))))
+	(if (= ?a 1) then (assert (initial-office-requirement))
+		else (if (= ?a 2) then (assert (initial-music-requirement))
+		else (if (= ?a 3) then (assert (initial-casualgame-requirement))
+		else (if (= ?a 4) then (assert (initial-programming-requirement))
+		else (if (= ?a 5) then (assert (initial-3dgame-requirement))
+	)))))
+)
+
+(defrule MAIN::change-focus
+	?premise <- (can-change-focus)
+	?qn <- (qn-ans(id 0)(ans ?a)(converted Y))
+	=>
+	(retract ?premise)
+	(if (= ?a 1) then (focus OFFICE) ;(assert (initial-office-requirement))
+		else (if (= ?a 2) then (focus MUSIC) ;(assert (initial-music-requirement))
+		else (if (= ?a 3) then (focus CASUALGAME) ;(assert (initial-casualgame-requirement))
+		else (if (= ?a 4) then (focus PROGRAMMING) ;(assert (initial-programming-requirement))
+		else (if (= ?a 5) then (focus 3DGAME) ;(assert (initial-3dgame-requirement))
+	)))))
+)
+
+(defrule MAIN::q1-convert ; Price
+	?req <- (laptop-requirement)
+	?qn <- (qn-ans(id 1)(ans ?a)(converted N))
+	(test (neq ?a NIL))
+	=>
+	(modify ?qn(converted Y))
+	(modify ?req(price-upper ?a))
+)
+
+(defrule MAIN::q2-convert
+	?req <- (laptop-requirement)
+	?qn <- (qn-ans(id 2)(ans ?a)(converted N))
+	(test (neq ?a NIL))
+	=>
+	(modify ?qn(converted Y))
+	(if (= ?a 1) then
+		(modify ?req(screen-size-lower 11.0) (screen-size-upper 13.3))
+	else (if (= ?a 2) then
+		(modify ?req(screen-size-lower 13.3) (screen-size-upper 15.0))
+	else (if (= ?a 3) then
+		(modify ?req(screen-size-lower 15.0))
+	)))
+)
+
+(defrule MAIN::q3-convert
+	?req <- (laptop-requirement)
+	?qn <- (qn-ans(id 3)(ans ?a)(converted N))
+	(test (neq ?a NIL))
+	=>
+	(modify ?qn(converted Y))
+	(if (= ?a 1) then
+		(modify ?req(is-fhd Y))
+	else (if (= ?a 2) then
+		(modify ?req(is-ultra-hd Y))
+	))
+	(assert (can-change-focus))
 )
 
 (deffacts MAIN::load-question-descriptions
-	(qn-dscpt(id 0)(
-		content "What is the new computer mainly used for?%n 
+	(qn-dscpt(id 0)(content "Why do you want a new computer? 
 			1. Office work 
 			2. Entertainment 
 			3. Web Browsing 
 			4. Development 
-			5. Gaming%nans: "))
+			5. Gaming%nMy purpose is: "))
+	(qn-dscpt(id 1)(content "How much do you want to pay for your new computer?%nPrice:"))
+	(qn-dscpt(id 2)(content "How big do you want your computer to be (in inch)?
+		1. 11~13.3    2. 13.3~15    3. larger than 15    4. don't care%nI want:"))
+	(qn-dscpt(id 3)(content "What screen resolution do you prefer?
+		1. FHD    2. 4K    3. don't care%nI prefer:"))
 )
 
 (deffacts MAIN::test-qn
+	(qn-ans(id 3))
+	(qn-ans(id 2))
+	(qn-ans(id 1))
 	(qn-ans(id 0))
 )
 
