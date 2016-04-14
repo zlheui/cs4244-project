@@ -5,6 +5,11 @@
 
 ; Initial setup
 
+(deftemplate MAIN::output
+	(slot id (type SYMBOL) (default REQ))
+	(multislot model (type SYMBOL) (default none))
+)
+
 (deftemplate MAIN::laptop
 	(slot brand (type SYMBOL))
 	(slot model (type SYMBOL))
@@ -12,7 +17,7 @@
 	(slot screen-size (type FLOAT))
 	(slot screen-resolution-x (type INTEGER))
 	(slot screen-resolution-y (type INTEGER))
-	(slot is-hd (type SYMBOL))
+	(slot is-fhd (type SYMBOL))
 	(slot is-ultra-hd (type SYMBOL))
 	(slot is-touchable (type SYMBOL))
 	(slot weight (type FLOAT))
@@ -29,7 +34,7 @@
 	(slot storage-type (type SYMBOL))
 	(slot storage-speed (type INTEGER))
 	(slot configurable (type STRING))
-	(slot battery-life (type FLOAT))
+	(slot battery-life (type INTEGER))
 	(slot os (type STRING))
 	(slot warranty (type INTEGER))
 	(slot colors (type STRING))
@@ -39,12 +44,12 @@
 	(slot id (type SYMBOL) (default REQ))
 	(multislot brand (type SYMBOL) (default none))
 	(multislot model (type SYMBOL) (default none))
-	(slot price-upper (type FLOAT) (default -1.0))
+	(slot price-upper (type FLOAT) (default 1000000.0))
 	(slot screen-size-lower (type FLOAT) (default -1.0))
-	(slot screen-size-upper (type FLOAT) (default -1.0))
+	(slot screen-size-upper (type FLOAT) (default 100.0))
 	(slot screen-resolution-x-lower (type INTEGER) (default -1))
 	(slot screen-resolution-y-lower (type INTEGER) (default -1))
-	(slot is-hd (type SYMBOL) (default none))
+	(slot is-fhd (type SYMBOL) (default none))
 	(slot is-ultra-hd (type SYMBOL) (default none))
 	(slot is-touchable (type SYMBOL) (default none))
 	(slot weight-lower (type FLOAT) (default -1.0))
@@ -118,12 +123,13 @@
 ; Initialize laptop requirement to empty requirement
 (deffacts MAIN::init-req
 	(laptop-requirement (id test))
+	(output (id test))
 )
 
 (defrule MAIN::ask-question
 	?requirement <- (laptop-requirement(is-ansd N))
 	=>
-	(focus 3dgaming)
+	(focus 3DGAME)
 	(modify ?requirement (is-ansd Y))
 )
 
