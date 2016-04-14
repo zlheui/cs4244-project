@@ -108,8 +108,10 @@
 	(test (neq ?a NIL))
 	=>
 	(if (= ?a 2) then (focus MUSIC) (assert (initial-music-requirement))
-	else (if (= ?a 4) then (focus PROGRAMMING) (assert (initial-programming-requirement))
-		else (if (= ?a 5) then (focus 3DGAME) (assert (initial-3dgame-requirement)))))
+		else (if (= ?a 3) then (focus CASUALGAME) (assert (initial-casualgame-requirement))
+		else (if (= ?a 4) then (focus PROGRAMMING) (assert (initial-programming-requirement))
+		else (if (= ?a 5) then (focus 3DGAME) (assert (initial-3dgame-requirement))
+	))))
 	(modify ?qn(converted Y))
 )
 
