@@ -40,7 +40,8 @@
 	(multislot brand (type SYMBOL) (default none))
 	(multislot model (type SYMBOL) (default none))
 	(slot price-upper (type FLOAT) (default -1.0))
-	(multislot screen-size (type FLOAT) (default -1.0))
+	(slot screen-size-lower (type FLOAT) (default -1.0))
+	(slot screen-size-upper (type FLOAT) (default -1.0))
 	(slot screen-resolution-x-lower (type INTEGER) (default -1))
 	(slot screen-resolution-y-lower (type INTEGER) (default -1))
 	(slot is-hd (type SYMBOL) (default none))
@@ -95,27 +96,35 @@
 	(modify ?qn(ans ?a))
 )
 
-(defrule MAIN::q0-convert
-	?req <- (laptop-requirement(cpu $?old-cpu))
-	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
-	(test (neq ?a NIL))
-	=>
-	(if (= ?a 1) then
-		(modify ?req(cpu $?old-cpu "i3"))
-	)
-	(modify ?qn(converted Y))
-)
+;(defrule MAIN::q0-convert
+;	?req <- (laptop-requirement(cpu $?old-cpu))
+;	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
+;	(test (neq ?a NIL))
+;	=>
+;	(if (= ?a 1) then
+;		(modify ?req(cpu $?old-cpu "i3"))
+;	)
+;	(modify ?qn(converted Y))
+;)
 
-(deffacts MAIN::load-question-descriptions
-	(qn-dscpt(id 0)(content "What is the new computer mainly used for?%n 1. Office work%n 2. Music and movies%n 3. Programming%n 4. Photo, video processing%n 5. Gaming%nans: "))
-)
+;(deffacts MAIN::load-question-descriptions
+;	(qn-dscpt(id 0)(content "What is the new computer mainly used for?%n 1. Office work%n 2. Music and movies%n 3. Programming%n 4. Photo, video processing%n 5. Gaming%nans: "))
+;)
 
-(deffacts MAIN::test-qn
-	(qn-ans(id 0))
-)
+;(deffacts MAIN::test-qn
+;	(qn-ans(id 0))
+;)
 
 ; Initialize laptop requirement to empty requirement
 (deffacts MAIN::init-req
-	(laptop-requirement)
+	(laptop-requirement (id test))
 )
+
+(defrule MAIN::ask-question
+	?requirement <- (laptop-requirement(is-ansd N))
+	=>
+	(focus 3dgaming)
+	(modify ?requirement (is-ansd Y))
+)
+
 
