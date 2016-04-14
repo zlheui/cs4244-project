@@ -13,57 +13,20 @@
 	(modify ?qn(ans ?a))
 )
 
-(defrule MUSIC::q20-convert ; Price
-	?req <- (laptop-requirement(cpu $?old-cpu))
+(defrule MUSIC::q20-convert ; Weight
+	?req <- (laptop-requirement(weight-upper ?old-weight-upper))
 	?qn <- (qn-ans(id 20)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
 	(modify ?qn(converted Y))
-	(modify ?req(price-upper ?a))
-)
-
-(defrule MUSIC::q21-convert ; Screen size
-	?req <- (laptop-requirement (id test))
-	?qn <- (qn-ans(id 21)(ans ?a)(converted N))
-	(test (neq ?a NIL))
-	=>
-	(modify ?qn(converted Y))
-	(if (= ?a 1) then
-		(modify ?req(screen-size-lower 11.0) (screen-size-upper 13.3))
-	else (if (= ?a 2) then
-		(modify ?req(screen-size-lower 13.3) (screen-size-upper 15.0))
-	else (if (= ?a 3) then
-		(modify ?req(screen-size-lower 15.0))
-	)))
-)
-
-(defrule MUSIC::q22-convert ; Screen resolution
-	?req <- (laptop-requirement (id test))
-	?qn <- (qn-ans(id 22)(ans ?a)(converted N))
-	(test (neq ?a NIL))
-	=>
-	(modify ?qn(converted Y))
-	(if (= ?a 1) then
-		(modify ?req(is-fhd Y))
-	else (if (= ?a 2) then
-		(modify ?req(is-ultra-hd Y))
-	))
-)
-
-(defrule MUSIC::q23-convert ; Weight
-	?req <- (laptop-requirement(weight-upper ?old-weight-upper))
-	?qn <- (qn-ans(id 23)(ans ?a)(converted N))
-	(test (neq ?a NIL))
-	=>
-	(modify ?qn(converted Y))
 	(if (= (str-compare ?a "y") 0) then
-		(modify ?req(weight-upper 2.0))
+		(modify ?req(weight-upper 1.6))
 	)
 )
 
-(defrule MUSIC::q24-convert ; Battery
+(defrule MUSIC::q21-convert ; Battery
 	?req <- (laptop-requirement(battery-life-lower ?old-battery-lower))
-	?qn <- (qn-ans(id 24)(ans ?a)(converted N))
+	?qn <- (qn-ans(id 21)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
 	(modify ?qn(converted Y))
@@ -73,18 +36,13 @@
 )
 
 (deffacts MUSIC::load-question-descriptions
-	(qn-dscpt(id 20)(content "How much money do you want to spend on the new computer?%n"))
-	(qn-dscpt(id 21)(content "What screen size would you prefer?%n1. 11~13.3    2. 13.3~15    3. 15~    4. No requirement%nans:"))
-	(qn-dscpt(id 22)(content "What screen resolution would you prefer?%n1. FHD    2. 4K    3. No requirement%nans:"))
-	(qn-dscpt(id 23)(content "Do you often carry your laptop? (y/n)%n"))
-	(qn-dscpt(id 24)(content "Is there a readily available power source when using your laptop? (y/n)%n"))
+	(qn-dscpt(id 20)(content "Do you often carry your laptop? (y/n)%n"))
+	(qn-dscpt(id 21)(content "Is there a readily available power source when using your laptop? (y/n)%n"))
 )
 
 (deffacts MUSIC::test-qn-music
-	(qn-ans(id 24))
-	(qn-ans(id 23))
-	(qn-ans(id 22))
-	(qn-ans(id 21))
 	(qn-ans(id 20))
+	(qn-ans(id 21))
+
 )
 
