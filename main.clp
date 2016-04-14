@@ -5,7 +5,7 @@
 
 ; Initial setup
 
-(deftemplate laptop
+(deftemplate MAIN::laptop
 	(slot brand (type SYMBOL))
 	(slot model (type SYMBOL))
 	(slot price (type FLOAT))
@@ -73,15 +73,49 @@
 	(slot is-ansd (type SYMBOL)(default N))
 )
 
+; Template for questions
+(deftemplate MAIN::qn-dscpt
+	(slot id (type INTEGER))
+	(slot content (type STRING))
+)
+
+(deftemplate MAIN::qn-ans
+	(slot id (type INTEGER))
+	(slot ans (default NIL))
+	(slot converted (type SYMBOL)(default N))
+)
+
+(defrule MAIN::ask-qn
+	?qn <- (qn-ans(id ?qn-id)(ans NIL))
+	(qn-dscpt(id ?qn-id)(content ?qn-cnt))
+	=>
+	(printout t crlf)
+	(bind ?tmp-str (format t ?qn-cnt))
+	(bind ?a (read))
+	(modify ?qn(ans ?a))
+)
+
+(defrule MAIN::q0-convert
+	?req <- (laptop-requirement(cpu $?old-cpu))
+	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
+	(test (neq ?a NIL))
+	=>
+	(if (= ?a 1) then
+		(modify ?req(cpu $?old-cpu "i3"))
+	)
+	(modify ?qn(converted Y))
+)
+
+(deffacts MAIN::load-question-descriptions
+	(qn-dscpt(id 0)(content "What is the new computer mainly used for?%n 1. Office work%n 2. Music and movies%n 3. Programming%n 4. Photo, video processing%n 5. Gaming%nans: "))
+)
+
+(deffacts MAIN::test-qn
+	(qn-ans(id 0))
+)
+
 ; Initialize laptop requirement to empty requirement
 (deffacts MAIN::init-req
 	(laptop-requirement)
 )
 
-; Import question module and ask questions
-(defrule MAIN::ask-question
-	?requirement <- (laptop-requirement (is-ansd N))
-	=>
-	(focus QUESTION)
-	(modify ?requirement (is-ansd Y))
-)
