@@ -4,10 +4,12 @@ import csv
 strings = [
     'cpu',
     'model',
+    'cpu-model',
     'processor-model',
     'gpu',
     'configurable',
     'os',
+    'memory-type',
     'colors',
 ]
 
@@ -17,6 +19,8 @@ floats = [
     'weight',
     'battery-life',
     'processor-speed',
+    'cpu-class'
+    'gpu-class'
 ]
 
 
@@ -53,7 +57,7 @@ def row_to_clps(header, line):
     return clps
 
 
-with open('laptop-features.csv', 'r') as f:
+with open('data.csv', 'r') as f:
     csv_reader = csv.reader(f, delimiter=',')
     header = next(csv_reader)
 
