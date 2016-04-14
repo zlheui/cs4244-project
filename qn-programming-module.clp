@@ -5,7 +5,7 @@
 
 (defrule PROGRAMMING::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
-	(qn-dscpt(id ?qn-id)(content ?qn-cnt))
+	(qn-dscpt(id ?qn-id&:(< ?qn-id 50)&:(>= ?qn-id 40))(content ?qn-cnt))
 	=>
 	(printout t crlf)
 	(bind ?tmp-str (format t ?qn-cnt))
@@ -25,79 +25,76 @@
 	)
 )
 
-(defrule PROGRAMMING::q0-convert ; Price
+(defrule PROGRAMMING::q40-convert ; Price
 	?req <- (laptop-requirement(cpu $?old-cpu))
-	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
+	?qn <- (qn-ans(id 40)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
+	(modify ?qn(converted Y))å
 	(modify ?req(price-upper ?a))
-	(modify ?qn(converted Y))
 )
 
-(defrule PROGRAMMING::q1-convert ; Screen size
+(defrule PROGRAMMING::q41-convert ; Screen size
 	?req <- (laptop-requirement (id test))
-	?qn <- (qn-ans(id 1)(ans ?a)(converted N))
+	?qn <- (qn-ans(id 41)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
+	(modify ?qn(converted Y))
 	(if (= ?a 1) then
 		(modify ?req(screen-size-lower 11.0) (screen-size-upper 13.3))
 	else (if (= ?a 2) then
 		(modify ?req(screen-size-lower 13.3) (screen-size-upper 15.0))
 	else (if (= ?a 3) then
 		(modify ?req(screen-size-lower 15.0))
-	else (if (<> ?a 4) then
-		(printout t "Invalid input.")
-	))))
-	(modify ?qn(converted Y))
+	)))
 )
 
-(defrule PROGRAMMING::q2-convert ; IOS
+(defrule PROGRAMMING::q42-convert ; IOS
 	?req <- (laptop-requirement(os ?old-os))
-	?qn <- (qn-ans(id 2)(ans ?a)(converted N))
+	?qn <- (qn-ans(id 42)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
+	(modify ?qn(converted Y))
 	(if (= (str-compare ?a "y") 0) then
 		(modify ?req(os "IOS"))
 	)
-	(modify ?qn(converted Y))
 )
 
-(defrule PROGRAMMING::q3-convert ; Weight
+(defrule PROGRAMMING::q43-convert ; Weight
 	?req <- (laptop-requirement(weight-upper ?old-weight-upper))
-	?qn <- (qn-ans(id 3)(ans ?a)(converted N))
+	?qn <- (qn-ans(id 43)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
+	(modify ?qn(converted Y))
 	(if (= (str-compare ?a "y") 0) then
 		(modify ?req(weight-upper 1.6))
 	)
-	(modify ?qn(converted Y))
 )
 
-(defrule PROGRAMMING::q4-convert ; Battery
+(defrule PROGRAMMING::q44-convert ; Battery
 	?req <- (laptop-requirement(battery-life-lower ?old-battery-lower))
-	?qn <- (qn-ans(id 4)(ans ?a)(converted N))
+	?qn <- (qn-ans(id 44)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
+	(modify ?qn(converted Y))
 	(if (= (str-compare ?a "y") 0) then
 		(modify ?req(battery-life-lower 5))
 	)
-	(modify ?qn(converted Y))
 )
 
 (deffacts PROGRAMMING::load-question-descriptions
-	(qn-dscpt(id 0)(content "How much money do you want to spend on the new computer?%n"))
-	(qn-dscpt(id 1)(content "What screen size would you prefer?%n1. 11~13.3    2. 13.3~15    3. 15~    4. No requirement%nans:"))
-	(qn-dscpt(id 2)(content "Do you need to do IOS development? (y/n)%n"))
-	(qn-dscpt(id 3)(content "Do you often carry your laptop? (y/n)%n"))
-	(qn-dscpt(id 4)(content "Is there a readily available power source when using your laptop? (y/n)%n"))
+	(qn-dscpt(id 40)(content "How much money do you want to spend on the new computer?%n"))
+	(qn-dscpt(id 41)(content "What screen size would you prefer?%n1. 11~13.3    2. 13.3~15    3. 15~    4. No requirement%nans:"))
+	(qn-dscpt(id 42)(content "Do you need to do IOS development? (y/n)%n"))
+	(qn-dscpt(id 43)(content "Do you often carry your laptop? (y/n)%n"))
+	(qn-dscpt(id 44)(content "Is there a readily available power source when using your laptop? (y/n)%n"))
 )
 
 (deffacts PROGRAMMING::test-qn-music
-	(qn-ans(id 4))
-	(qn-ans(id 3))
-	(qn-ans(id 2))
-	(qn-ans(id 1))
-	(qn-ans(id 0))
-	(initial-requirement)
+	(qn-ans(id 44))
+	(qn-ans(id 43))
+	(qn-ans(id 42))
+	(qn-ans(id 41))
+	(qn-ans(id 40))
 )
 

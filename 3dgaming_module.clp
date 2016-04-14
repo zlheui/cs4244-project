@@ -39,16 +39,14 @@
 	?qn <- (qn-ans(id 50)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
+	(modify ?qn(converted Y))
 	(if (= ?a 1) then
 		(modify ?req(screen-size-lower 11.0) (screen-size-upper 13.3))
 	else (if (= ?a 2) then
 		(modify ?req(screen-size-lower 13.3) (screen-size-upper 15.0))
 	else (if (= ?a 3) then
 		(modify ?req(screen-size-lower 15.0))
-	else (if (<> ?a 4) then
-		(printout t "Invalid input.")
-	))))
-	(modify ?qn(converted Y))
+	)))
 )
 
 (defrule 3DGAME::q51-convert
@@ -56,15 +54,12 @@
 	?qn <- (qn-ans(id 51)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
+	(modify ?qn(converted Y))
 	(if (= ?a 1) then
 		(modify ?req(is-fhd Y))
 	else (if (= ?a 2) then
 		(modify ?req(is-ultra-hd Y))
-	else (if (<> ?a 3) then
-		(printout t "Invalid input.")
-	)))
-	(modify ?qn(converted Y))
-	(focus 3DGAMEMATCH)
+	))
 )
 
 (deffacts 3DGAME::load-question-descriptions
