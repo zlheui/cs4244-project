@@ -1,6 +1,7 @@
 ; 3DGAME module
 
 (defmodule 3DGAME 
+	;(import MAIN deftemplate laptop-requirement)
 	(import MAIN ?ALL)
 )
 
@@ -17,7 +18,7 @@
 
 (defrule 3DGAME::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
-	(qn-dscpt(id ?qn-id)(content ?qn-cnt))
+	(qn-dscpt(id ?qn-id&:(< ?qn-id 60)&:(>= ?qn-id 50))(content ?qn-cnt))
 	=>
 	(printout t crlf)
 	(bind ?tmp-str (format t ?qn-cnt))
@@ -33,9 +34,9 @@
 	(modify ?req(memory-lower 8) (storage-size-lower 512) (has-discrete-graphic-card Y))
 )
 
-(defrule 3DGAME::q0-convert
+(defrule 3DGAME::q50-convert
 	?req <- (laptop-requirement (id test))
-	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
+	?qn <- (qn-ans(id 50)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
 	(if (= ?a 1) then
@@ -50,9 +51,9 @@
 	(modify ?qn(converted Y))
 )
 
-(defrule 3DGAME::q1-convert
+(defrule 3DGAME::q51-convert
 	?req <- (laptop-requirement (id test))
-	?qn <- (qn-ans(id 1)(ans ?a)(converted N))
+	?qn <- (qn-ans(id 51)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
 	(if (= ?a 1) then
@@ -67,12 +68,11 @@
 )
 
 (deffacts 3DGAME::load-question-descriptions
-	(qn-dscpt(id 0)(content "What screen size would you prefer?%n1. 11~13.3    2. 13.3~15    3. 15~    4. No requirement%nans:"))
-	(qn-dscpt(id 1)(content "What screen resolution would you prefer?%n1. FHD    2. 4K    3. No requirement%nans:"))
+	(qn-dscpt(id 50)(content "What screen size would you prefer?%n1. 11~13.3    2. 13.3~15    3. 15~    4. No requirement%nans:"))
+	(qn-dscpt(id 51)(content "What screen resolution would you prefer?%n1. FHD    2. 4K    3. No requirement%nans:"))
 )
 
 (deffacts 3DGAME::test-qn-3DGAME
-	(qn-ans(id 1))
-	(qn-ans(id 0))
-	(initial-requirement)
+	(qn-ans(id 51))
+	(qn-ans(id 50))
 )

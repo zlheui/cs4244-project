@@ -1,5 +1,6 @@
 ; MAIN class to coordinate laptop recommendation system
 (defmodule MAIN
+	;(export deftemplate laptop-requirement)
 	(export ?ALL)
 ) 
 
@@ -93,7 +94,7 @@
 
 (defrule MAIN::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
-	(qn-dscpt(id ?qn-id)(content ?qn-cnt))
+	(qn-dscpt(id ?qn-id&:(< ?qn-id 10))(content ?qn-cnt))
 	=>
 	(printout t crlf)
 	(bind ?tmp-str (format t ?qn-cnt))
@@ -101,24 +102,30 @@
 	(modify ?qn(ans ?a))
 )
 
-;(defrule MAIN::q0-convert
-;	?req <- (laptop-requirement(cpu $?old-cpu))
-;	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
-;	(test (neq ?a NIL))
-;	=>
-;	(if (= ?a 1) then
-;		(modify ?req(cpu $?old-cpu "i3"))
-;	)
-;	(modify ?qn(converted Y))
-;)
+(defrule MAIN::q0-convert
+	?req <- (laptop-requirement)
+	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
+	(test (neq ?a NIL))
+	=>
+	(if (= ?a 5) then
+		(focus 3DGAME)
+	)
+	(modify ?qn(converted Y))
+)
 
-;(deffacts MAIN::load-question-descriptions
-;	(qn-dscpt(id 0)(content "What is the new computer mainly used for?%n 1. Office work%n 2. Music and movies%n 3. Programming%n 4. Photo, video processing%n 5. Gaming%nans: "))
-;)
+(deffacts MAIN::load-question-descriptions
+	(qn-dscpt(id 0)(
+		content "What is the new computer mainly used for?%n 
+			1. Office work%n 
+			2. Music and movies%n 
+			3. Programming%n 
+			4. Photo, video processing%n 
+			5. Gaming%nans: "))
+)
 
-;(deffacts MAIN::test-qn
-;	(qn-ans(id 0))
-;)
+(deffacts MAIN::test-qn
+	(qn-ans(id 0))
+)
 
 ; Initialize laptop requirement to empty requirement
 (deffacts MAIN::init-req
@@ -126,11 +133,11 @@
 	(output (id test))
 )
 
-(defrule MAIN::ask-question
-	?requirement <- (laptop-requirement(is-ansd N))
-	=>
-	(focus 3DGAME)
-	(modify ?requirement (is-ansd Y))
-)
+;(defrule MAIN::ask-question
+;	?requirement <- (laptop-requirement(is-ansd N))
+;	=>
+;	(focus 3DGAME)
+;	(modify ?requirement (is-ansd Y))
+;)
 
 
