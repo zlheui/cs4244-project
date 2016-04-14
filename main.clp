@@ -116,8 +116,6 @@
 	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
-	(if (= ?a 4) then (focus PROGRAMMING)
-		else (if (= ?a 3) then (focus CASUALGAME)))
 	(modify ?qn(converted Y))
 )
 
@@ -150,7 +148,7 @@
 	=>
 	(modify ?qn(converted Y))
 	(if (= ?a 1) then
-		(modify ?req(screen-size-lower 11.0) (screen-size-upper 13.3))
+		(modify ?req(screen-size-lower 10.0) (screen-size-upper 13.3))
 	else (if (= ?a 2) then
 		(modify ?req(screen-size-lower 13.3) (screen-size-upper 15.0))
 	else (if (= ?a 3) then
@@ -181,7 +179,7 @@
 			5. Gaming%nMy purpose is: "))
 	(qn-dscpt(id 1)(content "How much do you want to pay for your new computer?%nPrice:"))
 	(qn-dscpt(id 2)(content "How big do you want your computer to be (in inch)?
-		1. 11~13.3    2. 13.3~15    3. larger than 15    4. don't care%nI want:"))
+		1. 10~13.3    2. 13.3~15    3. larger than 15    4. don't care%nI want:"))
 	(qn-dscpt(id 3)(content "What screen resolution do you prefer?
 		1. FHD    2. 4K    3. don't care%nI prefer:"))
 )
