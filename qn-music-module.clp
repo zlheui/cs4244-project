@@ -14,8 +14,8 @@
 )
 
 (defrule MUSIC::initial-convert
-	?req <- (laptop-requirement (id test))
-	?fact <- (initial-requirement)
+	?req <- (laptop-requirement)
+	?fact <- (initial-music-requirement)
 	=>
 	(retract ?fact)
 	(modify ?req

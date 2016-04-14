@@ -39,8 +39,7 @@
 	(slot os (type STRING))
 	(slot warranty (type INTEGER))
 	(slot colors (type STRING))
-	(slot detachable (type SYMBOL))
-)
+	(slot detachable (type SYMBOL)))
 
 (deftemplate MAIN::laptop-requirement
 	(slot id (type SYMBOL) (default REQ))
@@ -108,9 +107,9 @@
 	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
-	(if (= ?a 2) then (focus MUSIC)
-	else (if (= ?a 4) then (focus PROGRAMMING)
-		else (if (= ?a 5) then (focus 3DGAME))))
+	(if (= ?a 2) then (focus MUSIC) (assert (initial-music-requirement))
+	else (if (= ?a 4) then (focus PROGRAMMING) (assert (initial-programming-requirement))
+		else (if (= ?a 5) then (focus 3DGAME) (assert (initial-3dgame-requirement)))))
 	(modify ?qn(converted Y))
 )
 
@@ -134,11 +133,11 @@
 	(output (id test))
 )
 
-(defrule MAIN::ask-question
-	?requirement <- (laptop-requirement(is-ansd N))
-	=>
-	(focus CASUALGAME)
-	(modify ?requirement (is-ansd Y))
-)
+;(defrule MAIN::ask-question
+;	?requirement <- (laptop-requirement(is-ansd N))
+;	=>
+;	(focus 3DGAME)
+;	(modify ?requirement (is-ansd Y))
+;)
 
 
