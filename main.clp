@@ -108,18 +108,6 @@
 	(test (neq ?a NIL))
 	=>
 	(modify ?qn(converted Y))
-;	(if (= ?a 1) then (focus OFFICE) (assert (initial-office-requirement))
-;		else (if (= ?a 2) then (focus MUSIC) (assert (initial-music-requirement))
-;		else (if (= ?a 3) then (focus CASUALGAME) (assert (initial-casualgame-requirement))
-;		else (if (= ?a 4) then (focus PROGRAMMING) (assert (initial-programming-requirement))
-;		else (if (= ?a 5) then (focus 3DGAME) (assert (initial-3dgame-requirement))
-;	)))))
-	(if (= ?a 1) then (assert (initial-office-requirement))
-		else (if (= ?a 2) then (assert (initial-music-requirement))
-		else (if (= ?a 3) then (assert (initial-casualgame-requirement))
-		else (if (= ?a 4) then (assert (initial-programming-requirement))
-		else (if (= ?a 5) then (assert (initial-3dgame-requirement))
-	)))))
 )
 
 (defrule MAIN::change-focus

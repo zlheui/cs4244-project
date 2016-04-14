@@ -13,14 +13,6 @@
 	(modify ?qn(ans ?a))
 )
 
-(defrule OFFICE::initial-convert
-	?init <- (initial-office-requirement)
-	?req <- (laptop-requirement)
-	=>
-	(retract ?init)
-	(modify ?req(memory-lower 2)(storage-size-lower 128))
-)
-
 (defrule OFFICE::q10-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 10)(ans ?a)(converted N))
