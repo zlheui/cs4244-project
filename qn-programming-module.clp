@@ -90,7 +90,7 @@
 	(qn-dscpt(id 44)(content "Is there a readily available power source when using your laptop? (y/n)%n"))
 )
 
-(deffacts PROGRAMMING::test-qn-music
+(deffacts PROGRAMMING::test-qn-programming
 	(qn-ans(id 44))
 	(qn-ans(id 43))
 	(qn-ans(id 42))
