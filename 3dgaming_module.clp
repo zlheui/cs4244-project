@@ -1,6 +1,5 @@
 ; 3DGAME module
-
-(defmodule 3DGAME 
+(defmodule 3DGAME
 	(import MAIN ?ALL)
 )
 

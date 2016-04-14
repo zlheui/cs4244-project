@@ -1,7 +1,7 @@
 ; 3DGAMEMATCH module
 
 (defmodule 3DGAMEMATCH
-	(import MAIN ?ALL)
+	(import MAIN deftemplate laptop laptop-requirement)
 )
 
 (deffacts 3DGAMEMATCH::facts
