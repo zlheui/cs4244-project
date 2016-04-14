@@ -8,12 +8,12 @@
 
 (deftemplate MAIN::output
 	(slot id (type SYMBOL) (default REQ))
-	(multislot model (type SYMBOL) (default none))
+	(multislot model (type STRING) (default "none"))
 )
 
 (deftemplate MAIN::laptop
 	(slot brand (type SYMBOL))
-	(slot model (type SYMBOL))
+	(slot model (type STRING))
 	(slot price (type FLOAT))
 	(slot screen-size (type FLOAT))
 	(slot screen-resolution-x (type INTEGER))
@@ -23,19 +23,26 @@
 	(slot is-touchable (type SYMBOL))
 	(slot weight (type FLOAT))
 	(slot cpu (type STRING))
+	(slot cpu-brand (type SYMBOL))
+	(slot cpu-cores (type INTEGER))
+	(slot cpu-class (type INTEGER))
+	(slot cpu-model (type STRING))
+	(slot cpu-frequency (type FLOAT))
 	(slot processor-brand (type STRING))
 	(slot processor-model (type STRING))
 	(slot processor-cores (type INTEGER))
 	(slot processor-speed (type FLOAT))
 	(slot memory (type INTEGER))
+	(slot memory-speed (type INTEGER))
 	(slot memory-type (type STRING))
 	(slot gpu (type STRING))
+	(slot gpu-class (type INTEGER))
 	(slot has-discrete-graphic-card (type SYMBOL))
 	(slot storage-size (type INTEGER))
 	(slot storage-type (type SYMBOL))
 	(slot storage-speed (type INTEGER))
 	(slot configurable (type STRING))
-	(slot battery-life (type INTEGER))
+	(slot battery-life (type FLOAT))
 	(slot os (type STRING))
 	(slot warranty (type INTEGER))
 	(slot colors (type STRING))
@@ -56,7 +63,8 @@
 	(slot is-touchable (type SYMBOL) (default none))
 	(slot weight-lower (type FLOAT) (default -1.0))
 	(slot weight-upper (type FLOAT) (default -1.0))
-	(multislot cpu (type STRING) (default "none"))
+	(slot cpu-class-lower (type INTEGER) (default -1))
+	(slot cpu-class-upper (type INTEGER) (default 10))
 	(multislot processor-brand (type STRING) (default "none"))
 	(multislot processor-model (type STRING) (default "none"))
 	(multislot processor-cores (type INTEGER) (default -1))
@@ -65,7 +73,8 @@
 	(slot memory-lower (type INTEGER) (default -1))
 	(slot memory-upper (type INTEGER) (default -1))
 	(multislot memory-type (type STRING) (default "none"))
-	(multislot gpu (type STRING) (default "none"))
+	(slot gpu-class-lower (type INTEGER) (default -1))
+	(slot gpu-class-upper (type INTEGER) (default 10))
 	(slot has-discrete-graphic-card (type SYMBOL) (default none))
 	(slot storage-size-lower (type INTEGER) (default -1))
 	(slot storage-size-upper (type INTEGER) (default -1))
@@ -73,7 +82,7 @@
 	(slot storage-speed-lower (type INTEGER) (default -1))
 	(slot storage-speed-upper (type INTEGER) (default -1))
 	(slot configurable (type STRING) (default "none"))
-	(slot battery-life-lower (type INTEGER) (default -1))
+	(slot battery-life-lower (type FLOAT) (default -1.0))
 	(multislot os (type STRING) (default "none"))
 	(slot warranty-lower (type INTEGER) (default -1))
 	(multislot colors (type STRING) (default "none"))
@@ -109,7 +118,7 @@
 	(test (neq ?a NIL))
 	=>
 	(if (= ?a 4) then (focus PROGRAMMING)
-		else (if (= ?a 5) then (focus 3DGAME)))
+		else (if (= ?a 3) then (focus CASUALGAME)))
 	(modify ?qn(converted Y))
 )
 
@@ -133,11 +142,11 @@
 	(output (id test))
 )
 
-(defrule MAIN::ask-question
-	?requirement <- (laptop-requirement(is-ansd N))
-	=>
-	(focus CASUALGAME)
-	(modify ?requirement (is-ansd Y))
-)
+;(defrule MAIN::ask-question
+;	?requirement <- (laptop-requirement(is-ansd N))
+;	=>
+;	(focus CASUALGAME)
+;	(modify ?requirement (is-ansd Y))
+;)
 
 

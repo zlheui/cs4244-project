@@ -2,6 +2,7 @@
 
 (defmodule 3DGAMEMATCH
 	(import MAIN ?ALL)
+	(import DATASET ?ALL)
 )
 
 (deffacts 3DGAMEMATCH::facts
