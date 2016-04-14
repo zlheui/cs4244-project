@@ -14,14 +14,6 @@
 	(modify ?qn(ans ?a))
 )
 
-(defrule CASUALGAME::initial_convert
-	?req <- (laptop-requirement (id test))
-	?fact <- (initial-casualgame-requirement)
-	=>
-	(retract ?fact)
-	(modify ?req(memory-lower 8) (storage-size-lower 512) (has-discrete-graphic-card Y))
-)
-
 (defrule CASUALGAME::q0-convert
 	?req <- (laptop-requirement (id test))
 	?qn <- (qn-ans(id 30)(ans ?a)(converted N))

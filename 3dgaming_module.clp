@@ -13,14 +13,6 @@
 	(modify ?qn(ans ?a))
 )
 
-(defrule 3DGAME::initial_convert
-	?req <- (laptop-requirement)
-	?fact <- (initial-3dgame-requirement)
-	=>
-	(retract ?fact)
-	(modify ?req(memory-lower 8) (storage-size-lower 512) (has-discrete-graphic-card Y))
-)
-
 (defrule 3DGAME::q50-convert
 	?req <- (laptop-requirement (id test))
 	?qn <- (qn-ans(id 50)(ans ?a)(converted N))

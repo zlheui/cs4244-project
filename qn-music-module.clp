@@ -13,18 +13,6 @@
 	(modify ?qn(ans ?a))
 )
 
-(defrule MUSIC::initial-convert
-	?req <- (laptop-requirement)
-	?fact <- (initial-music-requirement)
-	=>
-	(retract ?fact)
-	(modify ?req
-		(memory-lower 2)
-		(storage-size-lower 512)
-		(has-discrete-graphic-card N)
-	)
-)
-
 (defrule MUSIC::q20-convert ; Price
 	?req <- (laptop-requirement(cpu $?old-cpu))
 	?qn <- (qn-ans(id 20)(ans ?a)(converted N))

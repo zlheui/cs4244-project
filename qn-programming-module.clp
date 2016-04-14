@@ -13,18 +13,6 @@
 	(modify ?qn(ans ?a))
 )
 
-(defrule PROGRAMMING::initial-convert
-	?req <- (laptop-requirement)
-	?fact <- (initial-programming-requirement)
-	=>
-	(retract ?fact)
-	(modify ?req
-		(memory-lower 4)
-		(storage-size-lower 256)
-		(has-discrete-graphic-card N)
-	)
-)
-
 (defrule PROGRAMMING::q40-convert ; Price
 	?req <- (laptop-requirement(cpu $?old-cpu))
 	?qn <- (qn-ans(id 40)(ans ?a)(converted N))
