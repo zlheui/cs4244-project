@@ -19,8 +19,8 @@
 	=>
 	(retract ?fact)
 	(modify ?req
-		(memory-lower 2)
-		(storage-size-lower 512)
+		(memory-lower 4)
+		(storage-size-lower 256)
 		(has-discrete-graphic-card N)
 	)
 )
@@ -51,18 +51,14 @@
 	(modify ?qn(converted Y))
 )
 
-(defrule PROGRAMMING::q2-convert ; Screen resolution
-	?req <- (laptop-requirement (id test))
+(defrule PROGRAMMING::q2-convert ; IOS
+	?req <- (laptop-requirement(os ?old-os))
 	?qn <- (qn-ans(id 2)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
-	(if (= ?a 1) then
-		(modify ?req(is-hd Y))
-	else (if (= ?a 2) then
-		(modify ?req(is-ultra-hd Y))
-	else (if (<> ?a 3) then
-		(printout t "Invalid input.")
-	)))
+	(if (= (str-compare ?a "y") 0) then
+		(modify ?req(os "IOS"))
+	)
 	(modify ?qn(converted Y))
 )
 
@@ -72,7 +68,7 @@
 	(test (neq ?a NIL))
 	=>
 	(if (= (str-compare ?a "y") 0) then
-		(modify ?req(weight-upper 2.0))
+		(modify ?req(weight-upper 1.6))
 	)
 	(modify ?qn(converted Y))
 )
@@ -91,7 +87,7 @@
 (deffacts PROGRAMMING::load-question-descriptions
 	(qn-dscpt(id 0)(content "How much money do you want to spend on the new computer?%n"))
 	(qn-dscpt(id 1)(content "What screen size would you prefer?%n1. 11~13.3    2. 13.3~15    3. 15~    4. No requirement%nans:"))
-	(qn-dscpt(id 2)(content "What screen resolution would you prefer?%n1. FHD    2. 4K    3. No requirement%nans:"))
+	(qn-dscpt(id 2)(content "Do you need to do IOS development? (y/n)%n"))
 	(qn-dscpt(id 3)(content "Do you often carry your laptop? (y/n)%n"))
 	(qn-dscpt(id 4)(content "Is there a readily available power source when using your laptop? (y/n)%n"))
 )
