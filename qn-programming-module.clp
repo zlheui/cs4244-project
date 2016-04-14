@@ -66,7 +66,7 @@
 	(modify ?qn(converted Y))
 )
 
-(defrule MUSIC::q3-convert ; Weight
+(defrule PROGRAMMING::q3-convert ; Weight
 	?req <- (laptop-requirement(weight-upper ?old-weight-upper))
 	?qn <- (qn-ans(id 3)(ans ?a)(converted N))
 	(test (neq ?a NIL))
