@@ -30,9 +30,10 @@
 	(test (neq ?a NIL))
 	=>
 	(modify ?qn(converted Y))
-	(if (= (str-compare ?a "y") 0) then
-		(modify ?req(battery-life-lower 5))
+	(if (= (str-compare ?a "n") 0) then
+		(modify ?req(battery-life-lower 5.0))
 	)
+	(focus MUSIC-MATCH)
 )
 
 (deffacts MUSIC::load-question-descriptions
@@ -41,8 +42,7 @@
 )
 
 (deffacts MUSIC::test-qn-music
-	(qn-ans(id 20))
 	(qn-ans(id 21))
-
+	(qn-ans(id 20))
 )
 

@@ -2,31 +2,28 @@
 
 (defmodule MUSIC-MATCH
 	(import MAIN deftemplate laptop laptop-requirement)
+	(import DATASET ?ALL)
 )
 
-(deffacts MUSIC-MATCH::facts
-	(laptop(model lenovo-Y470) (price 1000.0) (screen-size 17.0) (has-discrete-graphic-card Y) (memory 16) (storage-size 1024) (cpu "high") (gpu "high"))
-	(laptop(model lenovo-Y570) (price 1000.0) (has-discrete-graphic-card Y) (memory 16) (storage-size 1024) (is-ultra-hd Y) (cpu "high") (gpu "high"))
-;	more facts
-)
-
-(defrule MUSIC-MATCH::match-office-laptop
+(defrule MUSIC-MATCH::match-music-laptop
 	(laptop-requirement 
 		(price-upper ?price-upper) 
 		(screen-size-lower ?ssl) (screen-size-upper ?ssu) (is-fhd ?is-fhd) (is-ultra-hd ?is-ultra-hd)
 		(weight-upper ?weight-upper)
 		(battery-life-lower ?bt-lower)
 	)
-	?laptop <- (laptop 
+	?laptop <- (laptop
 		(model ?model)
 		(memory ?memo&:(>= ?memo 2))
+		(cpu-class ?cpu&:(>= ?cpu 1))
+		(gpu-class ?gpu&:(<= ?gpu 1))
 		(storage-size ?storage-size&:(>= ?storage-size 512))
-		(price ?price&:(<= ?price-upper ?price))
+		(price ?price&:(<= ?price ?price-upper))
 		(screen-size ?screen-size&:(and (>= ?screen-size ?ssl) (<= ?screen-size ?ssu)))
 		(is-fhd ?is-fhd-laptop&:(or (eq ?is-fhd none) (and (eq ?is-fhd Y) (eq ?is-fhd-laptop Y))))
 		(is-ultra-hd ?is-ultra-hd-laptop&:(or (eq ?is-ultra-hd none)(and (eq ?is-ultra-hd Y)(eq ?is-ultra-hd-laptop Y))))
-		(weight ?weight&:(<= ?weigh ?weight-upper))
-		(battery-life ?bt-life&:(<= ?bt-life ?bt-lower))
+		(weight ?weight&:(<= ?weight ?weight-upper))
+		(battery-life ?bt-life&:(>= ?bt-life ?bt-lower))
 	)
 	?output <- (output (id test) (model $?models))
 	=>
@@ -34,11 +31,10 @@
 	then
 		(bind ?var (create$ ?model))
 		(modify ?output(model ?var))
-		(printout t "1" ?var crlf)
 	else
 		(bind ?var (insert$ $?models 1 ?model))
 		(modify ?output(model ?var))
-		(printout t "2" ?var crlf)
 	)
+	(printout t ?model crlf)
 	(retract ?laptop)
 )
