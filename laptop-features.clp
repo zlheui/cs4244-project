@@ -1,3 +1,10 @@
+; DATASET module
+
+(defmodule DATASET
+	(import MAIN ?ALL)
+	(export ?ALL)
+)
+
 (deffacts initial (laptop (warranty 0) (is-touchable N) (weight 1.08) (storage-type SSD) (battery-life 9.00) (is-ultra-hd N) (is-fhd N) (memory-speed 1600) (memory 4) (gpu "Intel HD Graphics 6000") (brand Apple ) (screen-size 11.60) (price 1188.00) (gpu-class 1) (screen-resolution-y 768) (screen-resolution-x 1366) (has-discrete-graphic-card N) (cpu-cores 2) (cpu-frequency 1.6) (os "OS X") (detachable N) (storage-size 128) (memory-type "LPDDR3") (model "11-inch MacBook Air 128G") (cpu-brand Intel) (cpu-class 2) )
 (laptop (warranty 0) (is-touchable N) (weight 1.08) (storage-type SSD) (battery-life 9.00) (is-ultra-hd N) (is-fhd N) (configurable "Configurable to 512GB flash storage.") (memory-speed 1600) (memory 4) (gpu "Intel HD Graphics 6000") (brand Apple ) (screen-size 11.60) (price 1488.00) (gpu-class 1) (screen-resolution-y 768) (screen-resolution-x 1366) (has-discrete-graphic-card N) (cpu-cores 2) (cpu-frequency 1.6) (os "OS X") (detachable N) (storage-size 256) (memory-type "LPDDR3") (model "11-inch MacBook Air 256G") (cpu-brand Intel) (cpu-class 2) )
 (laptop (warranty 0) (is-touchable N) (weight 1.35) (storage-type SSD) (battery-life 12.00) (is-ultra-hd N) (is-fhd N) (memory-speed 1600) (memory 4) (gpu "Intel HD Graphics 6000") (brand Apple ) (screen-size 13.30) (price 1328.00) (gpu-class 1) (screen-resolution-y 900) (screen-resolution-x 1440) (has-discrete-graphic-card N) (cpu-cores 2) (cpu-frequency 1.6) (os "OS X") (detachable N) (storage-size 128) (memory-type "LPDDR3") (model "13-inch MacBook Air 128G") (cpu-brand Intel) (cpu-class 2) )
