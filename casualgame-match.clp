@@ -13,7 +13,7 @@
 	(modify ?output(is-finished Y))
 )
 
-; Patter matching to find recommendations based on user requirements.
+; Pattern matching to find recommendations based on user requirements.
 (defrule CASUALGAMEMATCH::match-casual-game-laptop
 	(laptop-requirement 
 		(price-upper ?price-upper) 
