@@ -190,6 +190,11 @@
 	(assert (can-change-focus))
 )
 
+;;;************************
+;;;* PRINT RECOMMENDATIONS*
+;;;************************
+
+; Prepare to print.
 (defrule MAIN::print-prepare
 	(output (id test) (is-finished Y))
 	(not (print-laptop))
