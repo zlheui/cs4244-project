@@ -17,6 +17,12 @@
 	(export ?ALL)
 ) 
 
+; DATASET module for laptop features
+(defmodule DATASET
+	(import MAIN ?ALL)
+	(export ?ALL)
+)
+
 ;;;**********************************
 ;;;* DEFGLOBAL TEMPLATES DEFINITION *
 ;;;**********************************

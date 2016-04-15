@@ -21,7 +21,7 @@ function appendData(data, done) {
   if (optIndex >=  0) {
     var optionsStr = data.substr(optIndex + 5);
     data = data.substr(0, optIndex);
-    optionsStr = optionsStr.split(/(\d)\[(.+?)\]/g).filter(function(e) {
+    optionsStr = optionsStr.split(/(\d+)\[(.+?)\]/g).filter(function(e) {
       return e.trim().length > 0;
     });
     var options = {};
