@@ -190,9 +190,9 @@
 	?fact <- (print-begin)
 	(not (print-laptop))
 	=>
-	(print-models $?models)
+	(print-models (delete-member$ $?models "none"))
 	(bind ?tmp-str (format t "Which laptop would you want to view the detail?<opt>"))
-	(print-models-index $?models)
+	(print-models-index (delete-member$ $?models "none"))
 	(bind ?tmp-str (format t "0[Restart session]</end>"))
 	(bind ?a (read-number))
 	(if (eq ?a 0) then
