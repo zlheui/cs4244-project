@@ -15,6 +15,12 @@ def index():
 
     p = subprocess.Popen(['clips', '-u'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True, preexec_fn=os.setsid)
     send_to_clips('', skip=True)  # Hack to ignore initial clips printout.
+
+    with open('load.clp', 'r') as f:
+        for line in f:
+            if len(line) > 1:  # If not empty line...
+                send_to_clips(line)
+
     return render_template('index.html')
 
 
