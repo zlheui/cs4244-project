@@ -1,16 +1,19 @@
 ; PROGRAMMING-MATCH module
-
 (defmodule PROGRAMMING-MATCH
 	(import MAIN deftemplate laptop laptop-requirement)
 	(import DATASET ?ALL)
 )
 
+; This is a rule to flag that the pattern matching in the current
+; matching module has been finished. This activates the printing
+; functions in the MAIN module.
 (defrule PROGRAMMING-MATCH::mark-finish
 	?output <- (output (id test) (is-finished N))
 	=>
 	(modify ?output(is-finished Y))
 )
 
+; Patter matching to find recommendations based on user requirements.
 (defrule PROGRAMMING-MATCH::match-programming-laptop
 	(laptop-requirement 
 		(price-upper ?price-upper) 

@@ -3,6 +3,7 @@
 	(import MAIN ?ALL)
 )
 
+; Ask questions specific to the current purpose.
 (defrule 3DGAME::ask-qn-3dgame
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
 	(qn-dscpt(id ?qn-id&:(< ?qn-id 60)&:(>= ?qn-id 50))(content ?qn-cnt))

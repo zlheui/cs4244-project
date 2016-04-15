@@ -1,16 +1,19 @@
 ; 3DGAMEMATCH module
-
 (defmodule 3DGAMEMATCH
 	(import MAIN ?ALL)
 	(import DATASET ?ALL)
 )
 
+; This is a rule to flag that the pattern matching in the current
+; matching module has been finished. This activates the printing
+; functions in the MAIN module.
 (defrule 3DGAMEMATCH::mark-finish
 	?output <- (output (id test) (is-finished N))
 	=>
 	(modify ?output(is-finished Y))
 )
 
+; Patter matching to find recommendations based on user requirements.
 (defrule 3DGAMEMATCH::match-gaming-laptop
 	(laptop-requirement 
 		(price-upper ?price-upper) 

@@ -4,6 +4,7 @@
 	(import MAIN ?ALL)
 )
 
+; Ask questions specific to the current purpose.
 (defrule CASUALGAME::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
 	(qn-dscpt(id ?qn-id&:(< ?qn-id 40)&:(>= ?qn-id 30))(content ?qn-cnt))

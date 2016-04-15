@@ -3,6 +3,7 @@
 	(import MAIN ?ALL)
 )
 
+; Ask questions specific to the current purpose.
 (defrule PROGRAMMING::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
 	(qn-dscpt(id ?qn-id&:(< ?qn-id 50)&:(>= ?qn-id 40))(content ?qn-cnt))

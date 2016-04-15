@@ -1,11 +1,27 @@
+;;;======================================================
+;;;   Laptop Recommendation System
+;;;
+;;;     A simple expert system which attempts to give
+;;;     professional recommendations of laptops based
+;;;     on user requirements.
+;;;     The knowledge in this system is collected from
+;;;     online sources.
+;;; 
+;;;     This system is implemented in CLIPS Version 6.3.
+;;;     Follow README.md instructions to execute the
+;;;     programming with a simple GUI.
+;;;======================================================
+
 ; MAIN class to coordinate laptop recommendation system
 (defmodule MAIN
-	;(export deftemplate laptop-requirement)
 	(export ?ALL)
 ) 
 
-; Initial setup
+;;;**********************************
+;;;* DEFGLOBAL TEMPLATES DEFINITION *
+;;;**********************************
 
+; Template for recommendations output.
 (deftemplate MAIN::output
 	(slot id (type SYMBOL) (default REQ))
 	(multislot model (type STRING) (default "none"))
@@ -13,6 +29,7 @@
 	(slot for-print (type STRING) (default "none"))
 )
 
+; Template for laptop data in DATASET.
 (deftemplate MAIN::laptop
 	(slot brand (type SYMBOL))
 	(slot model (type STRING))
@@ -50,6 +67,7 @@
 	(slot colors (type STRING))
 	(slot detachable (type SYMBOL)))
 
+; Template for user requirements.
 (deftemplate MAIN::laptop-requirement
 	(slot id (type SYMBOL) (default REQ))
 	(multislot brand (type SYMBOL) (default none))
@@ -81,17 +99,22 @@
 	(slot is-ansd (type SYMBOL)(default N))
 )
 
-; Template for questions
+; Template for questions.
 (deftemplate MAIN::qn-dscpt
 	(slot id (type INTEGER))
 	(slot content (type STRING))
 )
 
+; Template for questions.
 (deftemplate MAIN::qn-ans
 	(slot id (type INTEGER))
 	(slot ans (default NIL))
 	(slot converted (type SYMBOL)(default N))
 )
+
+;;;************************
+;;;* ASK GENERAL QUESTIONS*
+;;;************************
 
 (defrule MAIN::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
@@ -103,6 +126,7 @@
 	(modify ?qn(ans ?a))
 )
 
+; Update user requirements based on user input.
 (defrule MAIN::q0-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
@@ -185,31 +209,14 @@
 	)
 )
 
-(defrule MAIN::print-nothing
-	?fact <- (print-begin)
-	(output (id test) (is-finished Y) (model $?models))
-	(test (= (length $?models) 1))
-	(test (eq (nth$ 1 $?models) "none"))
-	=>
-	(printout t "There are no recommended laptop matches.<opt>0[Restart session]</end>")
-	(bind ?a (read-number))
-	(if (eq ?a 0) then
-		(reset)
-		(run)
-	)
-)
-
-
 (defrule MAIN::print-start
 	?output <- (output (id test) (is-finished Y) (model $?models))
 	?fact <- (print-begin)
 	(not (print-laptop))
-	(test (>= (length $?models) 1))
-	(test (neq (nth$ 1 $?models) "none"))
 	=>
-	(print-models (delete-member$ $?models "none"))
+	(print-smodels $?models)
 	(bind ?tmp-str (format t "Which laptop would you want to view the detail?<opt>"))
-	(print-models-index (delete-member$ $?models "none"))
+	(print-models-index $?models)
 	(bind ?tmp-str (format t "0[Restart session]</end>"))
 	(bind ?a (read-number))
 	(if (eq ?a 0) then
@@ -223,33 +230,15 @@
 	)
 )
 
-(deffunction MAIN::print-laptop-detail
-	(?laptop)
-	(printout t (fact-slot-value ?laptop brand)
-		" " (fact-slot-value ?laptop model)
-		crlf (fact-slot-value ?laptop os)
-		", " (fact-slot-value ?laptop memory) "GB RAM"
-		crlf (fact-slot-value ?laptop screen-size) "\""
-		" " (fact-slot-value ?laptop screen-resolution-x)
-		"x" (fact-slot-value ?laptop screen-resolution-y)
-		crlf (fact-slot-value ?laptop gpu)
-		crlf (fact-slot-value ?laptop storage-size)
-		" " (fact-slot-value ?laptop storage-type)
-		crlf "~" (fact-slot-value ?laptop battery-life) "h battery life"
-		crlf "$" (fact-slot-value ?laptop price)
-	crlf)
-)
-
 (defrule MAIN::print-info
 	?fact <- (print-laptop)
 	?output <- (output (id test) (is-finished Y) (for-print ?forprint))
 	?laptop <- (laptop (model ?model&:(eq ?model ?forprint)))
 	(test (neq ?forprint NIL))
 	=>
-	(print-laptop-detail ?laptop)
-	(printout t "<opt>1[Done]</end>")
-	(bind ?a (read-number))
 	(retract ?fact)
+	(retract ?laptop)
+	(printout t ?forprint crlf)
 	(assert (print-begin))
 )
 

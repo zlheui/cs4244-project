@@ -3,6 +3,7 @@
 	(import MAIN ?ALL)
 )
 
+; Ask questions specific to the current purpose.
 (defrule OFFICE::ask-qn-office
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
 	(qn-dscpt(id ?qn-id&:(< ?qn-id 20)&:(>= ?qn-id 10))(content ?qn-cnt))

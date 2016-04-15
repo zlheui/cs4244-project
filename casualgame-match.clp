@@ -1,16 +1,19 @@
 ; CASUALGAMEMATCH module
-
 (defmodule CASUALGAMEMATCH
 	(import MAIN ?ALL)
 	(import DATASET ?ALL)
 )
 
+; This is a rule to flag that the pattern matching in the current
+; matching module has been finished. This activates the printing
+; functions in the MAIN module.
 (defrule CASUALGAMEMATCH::mark-finish
 	?output <- (output (id test) (is-finished N))
 	=>
 	(modify ?output(is-finished Y))
 )
 
+; Patter matching to find recommendations based on user requirements.
 (defrule CASUALGAMEMATCH::match-casual-game-laptop
 	(laptop-requirement 
 		(price-upper ?price-upper) 

@@ -3,6 +3,7 @@
 	(import MAIN ?ALL)
 )
 
+; Ask questions specific to the current purpose.
 (defrule MUSIC::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
 	(qn-dscpt(id ?qn-id&:(< ?qn-id 30)&:(>= ?qn-id 20))(content ?qn-cnt))
