@@ -1,7 +1,7 @@
 (load "main.clp")
 (load "laptop-features.clp")
 
-(load "qn-casualgaming.clp")
+(load "qn-casualgame.clp")
 (load "qn-music.clp")
 (load "qn-gaming.clp")
 (load "qn-office.clp")

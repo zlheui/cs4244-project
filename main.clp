@@ -218,14 +218,31 @@
 	)
 )
 
+(defrule MAIN::print-nothing
+	?fact <- (print-begin)
+	(output (id test) (is-finished Y) (model $?models))
+	(test (= (length $?models) 1))
+	(test (eq (nth$ 1 $?models) "none"))
+	=>
+	(printout t "There are no recommended laptop matches.<opt>0[Restart session]</end>")
+	(bind ?a (read-number))
+	(if (eq ?a 0) then
+		(reset)
+		(run)
+	)
+)
+
+
 (defrule MAIN::print-start
 	?output <- (output (id test) (is-finished Y) (model $?models))
 	?fact <- (print-begin)
 	(not (print-laptop))
+	(test (>= (length $?models) 1))
+	(test (neq (nth$ 1 $?models) "none"))
 	=>
-	(print-smodels $?models)
+	(print-models (delete-member$ $?models "none"))
 	(bind ?tmp-str (format t "Which laptop would you want to view the detail?<opt>"))
-	(print-models-index $?models)
+	(print-models-index (delete-member$ $?models "none"))
 	(bind ?tmp-str (format t "0[Restart session]</end>"))
 	(bind ?a (read-number))
 	(if (eq ?a 0) then
@@ -239,15 +256,33 @@
 	)
 )
 
+(deffunction MAIN::print-laptop-detail
+	(?laptop)
+	(printout t 
+		" " (fact-slot-value ?laptop model)
+		crlf (fact-slot-value ?laptop os)
+		", " (fact-slot-value ?laptop memory) "GB RAM"
+		crlf (fact-slot-value ?laptop screen-size) "\""
+		" " (fact-slot-value ?laptop screen-resolution-x)
+		"x" (fact-slot-value ?laptop screen-resolution-y)
+		crlf (fact-slot-value ?laptop gpu)
+		crlf (fact-slot-value ?laptop storage-size)
+		" " (fact-slot-value ?laptop storage-type)
+		crlf "~" (fact-slot-value ?laptop battery-life) "h battery life"
+		crlf "$" (fact-slot-value ?laptop price)
+	crlf)
+)
+
 (defrule MAIN::print-info
 	?fact <- (print-laptop)
 	?output <- (output (id test) (is-finished Y) (for-print ?forprint))
 	?laptop <- (laptop (model ?model&:(eq ?model ?forprint)))
 	(test (neq ?forprint NIL))
 	=>
+	(print-laptop-detail ?laptop)
+	(printout t "<opt>1[Done]</end>")
+	(bind ?a (read-number))
 	(retract ?fact)
-	(retract ?laptop)
-	(printout t ?forprint crlf)
 	(assert (print-begin))
 )
 
