@@ -169,32 +169,40 @@
 	(assert (print-begin))
 )
 
+(deffunction MAIN::print-models
+	($?models)
+	(printout t "Here are the models recommended for you:" crlf)
+	(foreach ?model $?models
+		(printout t ?model-index ". " ?model crlf)
+	)
+	(printout t crlf)
+)
+
+(deffunction MAIN::print-models-index
+	($?models)
+	(foreach ?model $?models
+		(printout t ?model-index "[" ?model-index "]")
+	)
+)
+
 (defrule MAIN::print-start
 	?output <- (output (id test) (is-finished Y) (model $?models))
 	?fact <- (print-begin)
 	(not (print-laptop))
 	=>
-	(bind ?tmp-str (format t "Which laptop would you want to view the detail (by using index)?%n"))
-	(printout t $?models)
-	(bind ?tmp-str (format t "%nquit: -1%nrestart session: 0%n"))
+	(print-models $?models)
+	(bind ?tmp-str (format t "Which laptop would you want to view the detail?<opt>"))
+	(print-models-index $?models)
+	(bind ?tmp-str (format t "0[Restart session]</end>"))
 	(bind ?a (read-number))
-	(if (eq ?a -1) then
-		(exit)
-	else 
-		(if (eq ?a 0) then
-			(clear)
-			(load "/Users/zlheui/OneDrive/semester 8/CS4244/cs4244-project/main.clp")
-			(load "/Users/zlheui/OneDrive/semester 8/CS4244/cs4244-project/laptop-features.clp")
-			(load "/Users/zlheui/OneDrive/semester 8/CS4244/cs4244-project/casual_gaming.clp")
-			(load "/Users/zlheui/OneDrive/semester 8/CS4244/cs4244-project/casualgame-match.clp")
-			(reset)
-			(run)
-		else
-			(retract ?fact)
-			(assert (print-laptop))
-			(bind ?laptop (nth$ ?a $?models))
-			(modify ?output(id test) (is-finished Y) (model $?models) (for-print ?laptop))
-		)
+	(if (eq ?a 0) then
+		(reset)
+		(run)
+	else
+		(assert (print-laptop))
+		(retract ?fact)
+		(bind ?laptop (nth$ ?a $?models))
+		(modify ?output(id test) (is-finished Y) (model $?models) (for-print ?laptop))
 	)
 )
 
