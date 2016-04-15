@@ -11,7 +11,7 @@
 	(modify ?output(is-finished Y))
 )
 
-(defrule CASUALGAMEMATCH::matchlaptop
+(defrule CASUALGAMEMATCH::match-casual-game-laptop
 	(laptop-requirement 
 		(price-upper ?price-upper) 
 		(screen-size-lower ?ssl) 

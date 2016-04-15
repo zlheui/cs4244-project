@@ -6,7 +6,7 @@
 )
 
 (defrule PROGRAMMING-MATCH::mark-finish
-	?output <- (output (id test))
+	?output <- (output (id test) (is-finished N))
 	=>
 	(modify ?output(is-finished Y))
 )
@@ -34,6 +34,7 @@
 		(os ?laptop-os&:(or (= (str-compare ?os "none") 0) (= (str-compare ?laptop-os ?os) 0)))
 	)
 	?output <- (output (id test) (is-finished Y) (model $?models))
+	(test (not (member$ ?model $?models)))
 	=>
 	(if (eq (nth$ 1 $?models) none) 
 	then
@@ -43,6 +44,4 @@
 		(bind ?var (insert$ $?models 1 ?model))
 		(modify ?output(model ?var))
 	)
-	; (printout t ?model crlf)
-	(retract ?laptop)
 )
