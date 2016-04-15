@@ -31,8 +31,9 @@
 	=>
 	(modify ?qn(converted Y))
 	(if (= (str-compare ?a "y") 0) then
-		(modify ?req(battery-life-lower 6))
+		(modify ?req(battery-life-lower 6.0))
 	)
+	(focus OFFICE-MATCH)
 )
 
 (deffacts OFFICE::load-QUESTION-OFFICE-descriptions

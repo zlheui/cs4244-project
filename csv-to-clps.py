@@ -57,7 +57,7 @@ def row_to_clps(header, line):
     return clps
 
 
-with open('data.csv', 'r') as f:
+with open('laptop-features.csv', 'r') as f:
     csv_reader = csv.reader(f, delimiter=',')
     header = next(csv_reader)
 
