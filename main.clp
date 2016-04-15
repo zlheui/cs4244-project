@@ -112,9 +112,9 @@
 	(slot converted (type SYMBOL)(default N))
 )
 
-;;;************************
-;;;* ASK GENERAL QUESTIONS*
-;;;************************
+;;;*************************
+;;;* ASK GENERAL QUESTIONS *
+;;;*************************
 
 (defrule MAIN::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
@@ -190,9 +190,9 @@
 	(assert (can-change-focus))
 )
 
-;;;************************
-;;;* PRINT RECOMMENDATIONS*
-;;;************************
+;;;*************************
+;;;* PRINT RECOMMENDATIONS *
+;;;*************************
 
 ; Prepare to print.
 (defrule MAIN::print-prepare
@@ -231,7 +231,6 @@
 		(run)
 	)
 )
-
 
 (defrule MAIN::print-start
 	?output <- (output (id test) (is-finished Y) (model $?models))
@@ -285,6 +284,10 @@
 	(retract ?fact)
 	(assert (print-begin))
 )
+
+;;;*****************
+;;;* INITIAL FACTS *
+;;;*****************
 
 (deffacts MAIN::load-question-descriptions
 	(qn-dscpt(id 0)(content "Why do you want a new computer?<opt>
