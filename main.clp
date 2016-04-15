@@ -164,6 +164,7 @@
 
 (defrule MAIN::print-prepare
 	(output (id test) (is-finished Y))
+	(not (print-laptop))
 	=>
 	(assert (print-begin))
 )
@@ -171,6 +172,7 @@
 (defrule MAIN::print-start
 	?output <- (output (id test) (is-finished Y) (model $?models))
 	?fact <- (print-begin)
+	(not (print-laptop))
 	=>
 	(bind ?tmp-str (format t "Which laptop would you want to view the detail (by using index)?%n"))
 	(printout t $?models)
@@ -188,52 +190,25 @@
 			(reset)
 			(run)
 		else
+			(retract ?fact)
+			(assert (print-laptop))
 			(bind ?laptop (nth$ ?a $?models))
 			(modify ?output(id test) (is-finished Y) (model $?models) (for-print ?laptop))
-			(assert (print-laptop))
-			(retract ?fact)
 		)
 	)
 )
 
 (defrule MAIN::print-info
 	?fact <- (print-laptop)
-	?output <- (output (id test) (is-finished Y) (model $?models) (for-print ?forprint))
-	?laptop <- (laptop (model ?forprint))
+	?output <- (output (id test) (is-finished Y) (for-print ?forprint))
+	?laptop <- (laptop (model ?model&:(eq ?model ?forprint)))
+	(test (neq ?forprint NIL))
 	=>
-	(printout t ?forprint crlf)
 	(retract ?fact)
 	(retract ?laptop)
+	(printout t ?forprint crlf)
 	(assert (print-begin))
 )
-
-
-
-;(defrule MAIN::detailed-information
-;	?output <- (output (id test) (is-finished Y) (model $?models&:(>= (length$ $?models) 0)) (ready-print N))
-;	=>
-;	(printout t "Which laptop would you want to view the detail (by using index)?%n" $?models "%nquit: -1%nrestart session: 0%n")
-;	(modify ?output(is-finished N))
-;	;(bind ?a (read-number))
-;	;(if (eq ?a -1) then
-;	;	(exit)
-;	;else 
-;	;	(if (eq ?a 0) then
-;	;		(reset)
-;	;	else
-;	;		(bind ?laptop (nth$ ?a $?models))
-;	;		(modify ?output(for-print ?laptop) (ready-print Y))
-;	;	)
-;	;)
-;)
-
-;(defrule MAIN::print-info
-;	?output <- (output (id test) (is-finished Y) (ready-print Y) (for-print ?laptop&:(neq ?laptop "none")))
-;	(laptop (model ?model&:(eq ?model ?laptop)))
-;	=>
-;	(printout t "sample laptop" crlf)
-;	(modify ?output(ready-print N))
-;)
 
 (deffacts MAIN::load-question-descriptions
 	(qn-dscpt(id 0)(content "Why do you want a new computer?<opt>

@@ -35,6 +35,7 @@
 		(is-touchable ?is-touchable-laptop&:(or (eq ?is-touchable none) (eq ?is-touchable ?is-touchable-laptop))) 
 		(detachable ?detachable-laptop&:(or (eq ?detachable none) (eq ?detachable ?detachable-laptop))))
 	?output <- (output (id test) (is-finished Y) (model $?models))
+	(test (not (member$ ?model $?models)))
 	=>
 	(if (eq (nth$ 1 $?models) "none") 
 	then
@@ -45,5 +46,4 @@
 		(modify ?output(model ?var))
 	)
 	(printout t ?model crlf)
-	(retract ?laptop)
 )
