@@ -37,8 +37,8 @@
 )
 
 (deffacts MUSIC::load-question-descriptions
-	(qn-dscpt(id 20)(content "Do you often carry your laptop? (y/n)%n"))
-	(qn-dscpt(id 21)(content "Is there a readily available power source when using your laptop? (y/n)%n"))
+	(qn-dscpt(id 20)(content "Do you often carry your laptop?<bool></end>"))
+	(qn-dscpt(id 21)(content "Is there a readily available power source when using your laptop?<bool></end>"))
 )
 
 (deffacts MUSIC::test-qn-music

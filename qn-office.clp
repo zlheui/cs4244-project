@@ -37,8 +37,8 @@
 )
 
 (deffacts OFFICE::load-QUESTION-OFFICE-descriptions
-	(qn-dscpt(id 10)(content "Do you require light-weight laptop? (y/n)%nans: ")); weight
-	(qn-dscpt(id 11)(content "Could you access the power source in usual usage environments? (y/n)%nans: ")); battery
+	(qn-dscpt(id 10)(content "Do you require light-weight laptop?<bool></end>")); weight
+	(qn-dscpt(id 11)(content "Could you access the power source in usual usage environments?<bool></end>")); battery
 )
 
 (deffacts OFFICE::test-qn
