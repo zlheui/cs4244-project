@@ -1,10 +1,19 @@
 ; OFFICE-MATCH module
-
 (defmodule OFFICE-MATCH
-	(import MAIN deftemplate laptop laptop-requirement)
+	(import MAIN ?ALL)
 	(import DATASET ?ALL)
 )
 
+; This is a rule to flag that the pattern matching in the current
+; matching module has been finished. This activates the printing
+; functions in the MAIN module.
+(defrule OFFICE-MATCH::mark-finish
+	?output <- (output (id test) (is-finished N))
+	=>
+	(modify ?output(is-finished Y))
+)
+
+; Pattern matching to find recommendations based on user requirements.
 (defrule OFFICE-MATCH::match-office-laptop
 	(laptop-requirement
 		(price-upper ?price-upper) 
@@ -27,7 +36,8 @@
 		(weight ?weight&:(<= ?weight ?weight-upper))
 		(battery-life ?bt-life&:(>= ?bt-life ?bt-lower))
 	)
-	?output <- (output (id test) (model $?models))
+	?output <- (output (id test) (is-finished Y) (model $?models))
+	(test (not (member$ ?model $?models)))
 	=>
 	(if (eq (nth$ 1 $?models) none)
 	then
@@ -37,6 +47,4 @@
 		(bind ?var (insert$ $?models 1 ?model))
 		(modify ?output(model ?var))
 	)
-	(printout t ?model crlf)
-	(retract ?laptop)
 )

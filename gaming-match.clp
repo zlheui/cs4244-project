@@ -1,11 +1,20 @@
 ; 3DGAMEMATCH module
-
 (defmodule 3DGAMEMATCH
 	(import MAIN ?ALL)
 	(import DATASET ?ALL)
 )
 
-(defrule 3DGAMEMATCH::matchlaptop
+; This is a rule to flag that the pattern matching in the current
+; matching module has been finished. This activates the printing
+; functions in the MAIN module.
+(defrule 3DGAMEMATCH::mark-finish
+	?output <- (output (id test) (is-finished N))
+	=>
+	(modify ?output(is-finished Y))
+)
+
+; Pattern matching to find recommendations based on user requirements.
+(defrule 3DGAMEMATCH::match-gaming-laptop
 	(laptop-requirement 
 		(price-upper ?price-upper) 
 		(screen-size-lower ?ssl) 
@@ -24,7 +33,8 @@
 		(screen-size ?screen-size&:(and (>= ?screen-size ?ssl) (<= ?screen-size ?ssu))) 
 		(is-fhd ?is-fhd-laptop&:(or (eq ?is-fhd none) (and (eq ?is-fhd Y) (eq ?is-fhd-laptop Y)))) 
 		(is-ultra-hd ?is-ultra-hd-laptop&:(or (eq ?is-ultra-hd none) (and (eq ?is-ultra-hd Y) (eq ?is-ultra-hd-laptop Y)))))
-	?output <- (output (id test) (model $?models))
+	?output <- (output (id test) (is-finished Y) (model $?models))
+	(test (not (member$ ?model $?models)))
 	=>
 	(if (eq (nth$ 1 $?models) "none") 
 	then
@@ -34,6 +44,4 @@
 		(bind ?var (insert$ $?models 1 ?model))
 		(modify ?output(model ?var))
 	)
-	(printout t ?model crlf)
-	(retract ?laptop)
 )

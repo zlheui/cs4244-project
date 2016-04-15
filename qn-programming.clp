@@ -3,6 +3,7 @@
 	(import MAIN ?ALL)
 )
 
+; Ask questions specific to the current purpose.
 (defrule PROGRAMMING::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
 	(qn-dscpt(id ?qn-id&:(< ?qn-id 50)&:(>= ?qn-id 40))(content ?qn-cnt))
@@ -13,7 +14,8 @@
 	(modify ?qn(ans ?a))
 )
 
-(defrule PROGRAMMING::q40-convert ; IOS
+; Convert quenstion of os requirement.
+(defrule PROGRAMMING::q40-convert
 	?req <- (laptop-requirement(os ?old-os))
 	?qn <- (qn-ans(id 40)(ans ?a)(converted N))
 	(test (neq ?a NIL))
@@ -24,7 +26,8 @@
 	)
 )
 
-(defrule PROGRAMMING::q41-convert ; Weight
+; Convert quenstion of weight requirement.
+(defrule PROGRAMMING::q41-convert 
 	?req <- (laptop-requirement(weight-upper ?old-weight-upper))
 	?qn <- (qn-ans(id 41)(ans ?a)(converted N))
 	(test (neq ?a NIL))
@@ -35,7 +38,8 @@
 	)
 )
 
-(defrule PROGRAMMING::q42-convert ; Battery
+; Convert quenstion of battery life requirement.
+(defrule PROGRAMMING::q42-convert
 	?req <- (laptop-requirement(battery-life-lower ?old-battery-lower))
 	?qn <- (qn-ans(id 42)(ans ?a)(converted N))
 	(test (neq ?a NIL))
@@ -48,9 +52,9 @@
 )
 
 (deffacts PROGRAMMING::load-question-descriptions
-	(qn-dscpt(id 40)(content "Do you need to do IOS development? (y/n)%n"))
-	(qn-dscpt(id 41)(content "Do you often carry your laptop? (y/n)%n"))
-	(qn-dscpt(id 42)(content "Is there a readily available power source when using your laptop? (y/n)%n"))
+	(qn-dscpt(id 40)(content "Do you need to do IOS development?<bool></end>"))
+	(qn-dscpt(id 41)(content "Do you often carry your laptop?<bool></end>"))
+	(qn-dscpt(id 42)(content "Is there a readily available power source when using your laptop?<bool></end>"))
 )
 
 (deffacts PROGRAMMING::test-qn-programming

@@ -4,6 +4,7 @@
 	(import MAIN ?ALL)
 )
 
+; Ask questions specific to the current purpose.
 (defrule CASUALGAME::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
 	(qn-dscpt(id ?qn-id&:(< ?qn-id 40)&:(>= ?qn-id 30))(content ?qn-cnt))
@@ -14,7 +15,7 @@
 	(modify ?qn(ans ?a))
 )
 
-
+; Convert quenstion of touchable requirement.
 (defrule CASUALGAME::q30-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 30)(ans ?a)(converted N))
@@ -30,6 +31,7 @@
 	)))
 )
 
+; Convert quenstion of detachable requirement.
 (defrule CASUALGAME::q31-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 31)(ans ?a)(converted N))
@@ -47,8 +49,8 @@
 )
 
 (deffacts CASUALGAME::load-question-descriptions
-	(qn-dscpt(id 30)(content "Would you prefer the laptop to be touchable?%n1. Yes    2. No    3. No requirement%nans:"))
-	(qn-dscpt(id 31)(content "Would you prefer the laptop to be detachable?%n1. Yes    2. No    3. No requirement%nans:"))
+	(qn-dscpt(id 30)(content "Would you prefer the laptop to be touchable?<opt>1[Yes]    2[No]   3[No requirements]</end>"))
+	(qn-dscpt(id 31)(content "Would you prefer the laptop to be detachable?<opt>1[Yes]    2[No]    3[No requirements]</end>"))
 )
 
 (deffacts CASUALGAME::test-qn-CASUALGAME

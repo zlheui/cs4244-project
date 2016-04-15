@@ -1,16 +1,41 @@
+;;;======================================================
+;;;   Laptop Recommendation System
+;;;
+;;;     A simple expert system which attempts to give
+;;;     professional recommendations of laptops based
+;;;     on user requirements.
+;;;     The knowledge in this system is collected from
+;;;     online sources.
+;;; 
+;;;     This system is implemented in CLIPS Version 6.3.
+;;;     Follow README.md instructions to execute the
+;;;     programming with a simple GUI.
+;;;======================================================
+
 ; MAIN class to coordinate laptop recommendation system
 (defmodule MAIN
-	;(export deftemplate laptop-requirement)
 	(export ?ALL)
 ) 
 
-; Initial setup
+; DATASET module for laptop features
+(defmodule DATASET
+	(import MAIN ?ALL)
+	(export ?ALL)
+)
 
+;;;**********************************
+;;;* DEFGLOBAL TEMPLATES DEFINITION *
+;;;**********************************
+
+; Template for recommendations output.
 (deftemplate MAIN::output
 	(slot id (type SYMBOL) (default REQ))
 	(multislot model (type STRING) (default "none"))
+	(slot is-finished (type SYMBOL) (default N))
+	(slot for-print (type STRING) (default "none"))
 )
 
+; Template for laptop data in DATASET.
 (deftemplate MAIN::laptop
 	(slot brand (type SYMBOL))
 	(slot model (type STRING))
@@ -48,6 +73,7 @@
 	(slot colors (type STRING))
 	(slot detachable (type SYMBOL)))
 
+; Template for user requirements.
 (deftemplate MAIN::laptop-requirement
 	(slot id (type SYMBOL) (default REQ))
 	(multislot brand (type SYMBOL) (default none))
@@ -79,17 +105,22 @@
 	(slot is-ansd (type SYMBOL)(default N))
 )
 
-; Template for questions
+; Template for questions.
 (deftemplate MAIN::qn-dscpt
 	(slot id (type INTEGER))
 	(slot content (type STRING))
 )
 
+; Template for questions.
 (deftemplate MAIN::qn-ans
 	(slot id (type INTEGER))
 	(slot ans (default NIL))
 	(slot converted (type SYMBOL)(default N))
 )
+
+;;;*************************
+;;;* ASK GENERAL QUESTIONS *
+;;;*************************
 
 (defrule MAIN::ask-qn
 	?qn <- (qn-ans(id ?qn-id)(ans NIL))
@@ -101,6 +132,8 @@
 	(modify ?qn(ans ?a))
 )
 
+; Update user requirements based on user input.
+; Convert quenstion of user purpose.
 (defrule MAIN::q0-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
@@ -122,7 +155,8 @@
 	)))))
 )
 
-(defrule MAIN::q1-convert ; Price
+; Convert quenstion of price requirement.
+(defrule MAIN::q1-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 1)(ans ?a)(converted N))
 	(test (neq ?a NIL))
@@ -131,6 +165,7 @@
 	(modify ?req(price-upper ?a))
 )
 
+; Convert quenstion of screen size requirement.
 (defrule MAIN::q2-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 2)(ans ?a)(converted N))
@@ -146,6 +181,7 @@
 	)))
 )
 
+; Convert quenstion of screen resolution.
 (defrule MAIN::q3-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 3)(ans ?a)(converted N))
@@ -160,18 +196,120 @@
 	(assert (can-change-focus))
 )
 
+;;;*************************
+;;;* PRINT RECOMMENDATIONS *
+;;;*************************
+
+; Prepare to print.
+(defrule MAIN::print-prepare
+	(output (id test) (is-finished Y))
+	(not (print-laptop))
+	=>
+	(assert (print-begin))
+)
+
+(deffunction MAIN::print-models
+	($?models)
+	(printout t "Here are the models recommended for you:" crlf)
+	(foreach ?model $?models
+		(printout t ?model-index ". " ?model crlf)
+	)
+	(printout t crlf)
+)
+
+(deffunction MAIN::print-models-index
+	($?models)
+	(foreach ?model $?models
+		(printout t ?model-index "[" ?model-index "]")
+	)
+)
+
+; Print information when not matching results.
+(defrule MAIN::print-nothing
+	?fact <- (print-begin)
+	(output (id test) (is-finished Y) (model $?models))
+	(test (= (length $?models) 1))
+	(test (eq (nth$ 1 $?models) "none"))
+	=>
+	(printout t "There are no recommended laptop matches.<opt>0[Restart session]</end>")
+	(bind ?a (read-number))
+	(if (eq ?a 0) then
+		(reset)
+		(run)
+	)
+)
+
+; Print recommended data when there are possible recommendations.
+(defrule MAIN::print-start
+	?output <- (output (id test) (is-finished Y) (model $?models))
+	?fact <- (print-begin)
+	(not (print-laptop))
+	(test (>= (length $?models) 1))
+	(test (neq (nth$ 1 $?models) "none"))
+	=>
+	(print-models (delete-member$ $?models "none"))
+	(bind ?tmp-str (format t "Which laptop would you want to view the detail?<opt>"))
+	(print-models-index (delete-member$ $?models "none"))
+	(bind ?tmp-str (format t "0[Restart session]</end>"))
+	(bind ?a (read-number))
+	(if (eq ?a 0) then
+		(reset)
+		(run)
+	else
+		(assert (print-laptop))
+		(retract ?fact)
+		(bind ?laptop (nth$ ?a $?models))
+		(modify ?output(id test) (is-finished Y) (model $?models) (for-print ?laptop))
+	)
+)
+
+; Print user details.
+(deffunction MAIN::print-laptop-detail
+	(?laptop)
+	(printout t 
+		" " (fact-slot-value ?laptop model)
+		crlf (fact-slot-value ?laptop os)
+		", " (fact-slot-value ?laptop memory) "GB RAM"
+		crlf (fact-slot-value ?laptop screen-size) "\""
+		" " (fact-slot-value ?laptop screen-resolution-x)
+		"x" (fact-slot-value ?laptop screen-resolution-y)
+		crlf (fact-slot-value ?laptop gpu)
+		crlf (fact-slot-value ?laptop storage-size)
+		" " (fact-slot-value ?laptop storage-type)
+		crlf "~" (fact-slot-value ?laptop battery-life) "h battery life"
+		crlf "$" (fact-slot-value ?laptop price)
+	crlf)
+)
+
+(defrule MAIN::print-info
+	?fact <- (print-laptop)
+	?output <- (output (id test) (is-finished Y) (for-print ?forprint))
+	?laptop <- (laptop (model ?model&:(eq ?model ?forprint)))
+	(test (neq ?forprint NIL))
+	=>
+	(print-laptop-detail ?laptop)
+	(printout t "<opt>1[Done]</end>")
+	(bind ?a (read-number))
+	(retract ?fact)
+	(assert (print-begin))
+)
+
+;;;*****************
+;;;* INITIAL FACTS *
+;;;*****************
+
 (deffacts MAIN::load-question-descriptions
-	(qn-dscpt(id 0)(content "Why do you want a new computer? 
-			1. Office work 
-			2. Entertainment 
-			3. Web Browsing 
-			4. Development 
-			5. Gaming%nMy purpose is: "))
-	(qn-dscpt(id 1)(content "How much do you want to pay for your new computer?%nPrice:"))
-	(qn-dscpt(id 2)(content "How big do you want your computer to be (in inch)?
-		1. 11 or smaller    2. 13    3. 15 or larger    4. don't care%nI want:"))
-	(qn-dscpt(id 3)(content "What screen resolution do you prefer?
-		1. FHD    2. 4K    3. don't care%nI prefer:"))
+	(qn-dscpt(id 0)(content "Why do you want a new computer?<opt>
+			1[Office work]
+			2[Entertainment]
+			3[Web Browsing]
+			4[Development]
+			5[Gaming]</end>"))
+	(qn-dscpt(id 1)(content "How much do you want to pay for your new computer?</end>"))
+	(qn-dscpt(id 2)(content "How big do you want your computer to be (in inch)?<opt>
+		1[11 or smaller]   2[13]   3[15 or larger]    4[don't care]</end>"))
+	(qn-dscpt(id 3)(content "What screen resolution do you prefer?<opt>
+		1[FHD]    2[4K]    3[don't care]</end>"))
 )
 
 (deffacts MAIN::test-qn
