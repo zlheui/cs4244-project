@@ -47,8 +47,8 @@
 )
 
 (deffacts CASUALGAME::load-question-descriptions
-	(qn-dscpt(id 30)(content "Would you prefer the laptop to be touchable?%n1. Yes    2. No    3. No requirement%nans:"))
-	(qn-dscpt(id 31)(content "Would you prefer the laptop to be detachable?%n1. Yes    2. No    3. No requirement%nans:"))
+	(qn-dscpt(id 30)(content "Would you prefer the laptop to be touchable?<opt>1[Yes]    2[No]   3[No requirements]</end>"))
+	(qn-dscpt(id 31)(content "Would you prefer the laptop to be detachable?<opt>1[Yes]    2[No]    3[No requirements]</end>"))
 )
 
 (deffacts CASUALGAME::test-qn-CASUALGAME

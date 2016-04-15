@@ -161,17 +161,17 @@
 )
 
 (deffacts MAIN::load-question-descriptions
-	(qn-dscpt(id 0)(content "Why do you want a new computer? 
-			1. Office work 
-			2. Entertainment 
-			3. Web Browsing 
-			4. Development 
-			5. Gaming%nMy purpose is: "))
-	(qn-dscpt(id 1)(content "How much do you want to pay for your new computer?%nPrice:"))
-	(qn-dscpt(id 2)(content "How big do you want your computer to be (in inch)?
-		1. 11 or smaller    2. 13    3. 15 or larger    4. don't care%nI want:"))
-	(qn-dscpt(id 3)(content "What screen resolution do you prefer?
-		1. FHD    2. 4K    3. don't care%nI prefer:"))
+	(qn-dscpt(id 0)(content "Why do you want a new computer?<opt>
+			1[Office work]
+			2[Entertainment]
+			3[Web Browsing]
+			4[Development]
+			5[Gaming]</end>"))
+	(qn-dscpt(id 1)(content "How much do you want to pay for your new computer?</end>"))
+	(qn-dscpt(id 2)(content "How big do you want your computer to be (in inch)?<opt>
+		1[10~13.3]   2[13.3~15]   3[larger than 15]    4[don't care]</end>"))
+	(qn-dscpt(id 3)(content "What screen resolution do you prefer?<opt>
+		1[FHD]    2[4K]    3[don't care]</end>"))
 )
 
 (deffacts MAIN::test-qn

@@ -48,9 +48,9 @@
 )
 
 (deffacts PROGRAMMING::load-question-descriptions
-	(qn-dscpt(id 40)(content "Do you need to do IOS development? (y/n)%n"))
-	(qn-dscpt(id 41)(content "Do you often carry your laptop? (y/n)%n"))
-	(qn-dscpt(id 42)(content "Is there a readily available power source when using your laptop? (y/n)%n"))
+	(qn-dscpt(id 40)(content "Do you need to do IOS development?<bool></end>"))
+	(qn-dscpt(id 41)(content "Do you often carry your laptop?<bool></end>"))
+	(qn-dscpt(id 42)(content "Is there a readily available power source when using your laptop?<bool></end>"))
 )
 
 (deffacts PROGRAMMING::test-qn-programming
