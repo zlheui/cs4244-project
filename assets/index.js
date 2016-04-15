@@ -86,7 +86,7 @@ $('#choices').on('click', 'button', function(event) {
 
 $('#number').keyup(function(event) {
   var val = $('#number').val();
-  $('#number').toggleClass('alert', parseInt(val) < 0);
+  $('#number').toggleClass('alert', parseInt(val) <= 0);
   if (event.keyCode === 13) {
     if (val.length > 0 && parseInt(val) > 0) {
       appendToOutput($('<li>').addClass('answer').text(val));
