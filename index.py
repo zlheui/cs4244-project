@@ -21,6 +21,8 @@ def index():
             if len(line) > 1:  # If not empty line...
                 send_to_clips(line)
 
+    send_to_clips('(reset)')  # Reset.
+
     return render_template('index.html')
 
 
