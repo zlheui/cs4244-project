@@ -44,6 +44,6 @@
 		(bind ?var (insert$ $?models 1 ?model))
 		(modify ?output(model ?var))
 	)
-	(printout t ?model crlf)
+	; (printout t ?model crlf)
 	(retract ?laptop)
 )
