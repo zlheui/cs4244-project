@@ -20,7 +20,7 @@
 	=>
 	(modify ?qn(converted Y))
 	(if (= (str-compare ?a "y") 0) then
-		(modify ?req(os "IOS"))
+		(modify ?req(os "OS X"))
 	)
 )
 
@@ -42,8 +42,9 @@
 	=>
 	(modify ?qn(converted Y))
 	(if (= (str-compare ?a "y") 0) then
-		(modify ?req(battery-life-lower 5))
+		(modify ?req(battery-life-lower 6.0))
 	)
+	(focus PROGRAMMING-MATCH)
 )
 
 (deffacts PROGRAMMING::load-question-descriptions
@@ -56,6 +57,5 @@
 	(qn-ans(id 42))
 	(qn-ans(id 41))
 	(qn-ans(id 40))
-
 )
 

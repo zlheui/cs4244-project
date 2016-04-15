@@ -16,7 +16,7 @@
 
 
 (defrule CASUALGAME::q30-convert
-	?req <- (laptop-requirement (id test))
+	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 30)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
@@ -31,7 +31,7 @@
 )
 
 (defrule CASUALGAME::q31-convert
-	?req <- (laptop-requirement (id test))
+	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 31)(ans ?a)(converted N))
 	(test (neq ?a NIL))
 	=>
