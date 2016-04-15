@@ -127,6 +127,7 @@
 )
 
 ; Update user requirements based on user input.
+; Convert quenstion of user purpose.
 (defrule MAIN::q0-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 0)(ans ?a)(converted N))
@@ -148,7 +149,8 @@
 	)))))
 )
 
-(defrule MAIN::q1-convert ; Price
+; Convert quenstion of price requirement.
+(defrule MAIN::q1-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 1)(ans ?a)(converted N))
 	(test (neq ?a NIL))
@@ -157,6 +159,7 @@
 	(modify ?req(price-upper ?a))
 )
 
+; Convert quenstion of screen size requirement.
 (defrule MAIN::q2-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 2)(ans ?a)(converted N))
@@ -172,6 +175,7 @@
 	)))
 )
 
+; Convert quenstion of screen resolution.
 (defrule MAIN::q3-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 3)(ans ?a)(converted N))
