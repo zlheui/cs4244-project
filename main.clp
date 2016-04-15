@@ -185,10 +185,27 @@
 	)
 )
 
+(defrule MAIN::print-nothing
+	?fact <- (print-begin)
+	(output (id test) (is-finished Y) (model $?models))
+	(test (= (length $?models) 1))
+	(test (eq (nth$ 1 $?models) "none"))
+	=>
+	(printout t "There are no recommended laptop matches.<opt>0[Restart session]</end>")
+	(bind ?a (read-number))
+	(if (eq ?a 0) then
+		(reset)
+		(run)
+	)
+)
+
+
 (defrule MAIN::print-start
 	?output <- (output (id test) (is-finished Y) (model $?models))
 	?fact <- (print-begin)
 	(not (print-laptop))
+	(test (>= (length $?models) 1))
+	(test (neq (nth$ 1 $?models) "none"))
 	=>
 	(print-models (delete-member$ $?models "none"))
 	(bind ?tmp-str (format t "Which laptop would you want to view the detail?<opt>"))
