@@ -14,7 +14,8 @@
 	(modify ?qn(ans ?a))
 )
 
-(defrule PROGRAMMING::q40-convert ; IOS
+; Convert quenstion of os requirement.
+(defrule PROGRAMMING::q40-convert
 	?req <- (laptop-requirement(os ?old-os))
 	?qn <- (qn-ans(id 40)(ans ?a)(converted N))
 	(test (neq ?a NIL))
@@ -25,7 +26,8 @@
 	)
 )
 
-(defrule PROGRAMMING::q41-convert ; Weight
+; Convert quenstion of weight requirement.
+(defrule PROGRAMMING::q41-convert 
 	?req <- (laptop-requirement(weight-upper ?old-weight-upper))
 	?qn <- (qn-ans(id 41)(ans ?a)(converted N))
 	(test (neq ?a NIL))
@@ -36,7 +38,8 @@
 	)
 )
 
-(defrule PROGRAMMING::q42-convert ; Battery
+; Convert quenstion of battery life requirement.
+(defrule PROGRAMMING::q42-convert
 	?req <- (laptop-requirement(battery-life-lower ?old-battery-lower))
 	?qn <- (qn-ans(id 42)(ans ?a)(converted N))
 	(test (neq ?a NIL))

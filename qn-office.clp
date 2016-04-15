@@ -14,6 +14,7 @@
 	(modify ?qn(ans ?a))
 )
 
+; Convert quenstion of weight requirement.
 (defrule OFFICE::q10-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 10)(ans ?a)(converted N))
@@ -25,6 +26,7 @@
 	)
 )
 
+; Convert quenstion of battery life requirement.
 (defrule OFFICE::q11-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 11)(ans ?a)(converted N))

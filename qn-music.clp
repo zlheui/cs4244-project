@@ -14,7 +14,8 @@
 	(modify ?qn(ans ?a))
 )
 
-(defrule MUSIC::q20-convert ; Weight
+; Convert quenstion of weight requirement.
+(defrule MUSIC::q20-convert 
 	?req <- (laptop-requirement(weight-upper ?old-weight-upper))
 	?qn <- (qn-ans(id 20)(ans ?a)(converted N))
 	(test (neq ?a NIL))
@@ -25,7 +26,8 @@
 	)
 )
 
-(defrule MUSIC::q21-convert ; Battery
+; Convert quenstion of battery life requirement.
+(defrule MUSIC::q21-convert
 	?req <- (laptop-requirement(battery-life-lower ?old-battery-lower))
 	?qn <- (qn-ans(id 21)(ans ?a)(converted N))
 	(test (neq ?a NIL))

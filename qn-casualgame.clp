@@ -15,7 +15,7 @@
 	(modify ?qn(ans ?a))
 )
 
-
+; Convert quenstion of touchable requirement.
 (defrule CASUALGAME::q30-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 30)(ans ?a)(converted N))
@@ -31,6 +31,7 @@
 	)))
 )
 
+; Convert quenstion of detachable requirement.
 (defrule CASUALGAME::q31-convert
 	?req <- (laptop-requirement)
 	?qn <- (qn-ans(id 31)(ans ?a)(converted N))

@@ -218,6 +218,7 @@
 	)
 )
 
+; Print information when not matching results.
 (defrule MAIN::print-nothing
 	?fact <- (print-begin)
 	(output (id test) (is-finished Y) (model $?models))
@@ -232,6 +233,7 @@
 	)
 )
 
+; Print recommended data when there are possible recommendations.
 (defrule MAIN::print-start
 	?output <- (output (id test) (is-finished Y) (model $?models))
 	?fact <- (print-begin)
@@ -255,6 +257,7 @@
 	)
 )
 
+; Print user details.
 (deffunction MAIN::print-laptop-detail
 	(?laptop)
 	(printout t 
