@@ -5,6 +5,12 @@
 	(import DATASET ?ALL)
 )
 
+(defrule MUSIC-MATCH::mark-finish
+	?output <- (output (id test))
+	=>
+	(modify ?output(is-finished Y))
+)
+
 (defrule MUSIC-MATCH::match-music-laptop
 	(laptop-requirement 
 		(price-upper ?price-upper) 
@@ -25,7 +31,7 @@
 		(weight ?weight&:(<= ?weight ?weight-upper))
 		(battery-life ?bt-life&:(>= ?bt-life ?bt-lower))
 	)
-	?output <- (output (id test) (model $?models))
+	?output <- (output (id test) (is-finished Y) (model $?models))
 	=>
 	(if (eq (nth$ 1 $?models) none) 
 	then

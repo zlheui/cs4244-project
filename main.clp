@@ -9,6 +9,8 @@
 (deftemplate MAIN::output
 	(slot id (type SYMBOL) (default REQ))
 	(multislot model (type STRING) (default "none"))
+	(slot is-finished (type SYMBOL) (default N))
+	(slot for-print (type STRING) (default "none"))
 )
 
 (deftemplate MAIN::laptop
@@ -159,6 +161,79 @@
 	))
 	(assert (can-change-focus))
 )
+
+(defrule MAIN::print-prepare
+	(output (id test) (is-finished Y))
+	=>
+	(assert (print-begin))
+)
+
+(defrule MAIN::print-start
+	?output <- (output (id test) (is-finished Y) (model $?models))
+	?fact <- (print-begin)
+	=>
+	(bind ?tmp-str (format t "Which laptop would you want to view the detail (by using index)?%n"))
+	(printout t $?models)
+	(bind ?tmp-str (format t "%nquit: -1%nrestart session: 0%n"))
+	(bind ?a (read-number))
+	(if (eq ?a -1) then
+		(exit)
+	else 
+		(if (eq ?a 0) then
+			(clear)
+			(load "/Users/zlheui/OneDrive/semester 8/CS4244/cs4244-project/main.clp")
+			(load "/Users/zlheui/OneDrive/semester 8/CS4244/cs4244-project/laptop-features.clp")
+			(load "/Users/zlheui/OneDrive/semester 8/CS4244/cs4244-project/casual_gaming.clp")
+			(load "/Users/zlheui/OneDrive/semester 8/CS4244/cs4244-project/casualgame-match.clp")
+			(reset)
+			(run)
+		else
+			(bind ?laptop (nth$ ?a $?models))
+			(modify ?output(id test) (is-finished Y) (model $?models) (for-print ?laptop))
+			(assert (print-laptop))
+			(retract ?fact)
+		)
+	)
+)
+
+(defrule MAIN::print-info
+	?fact <- (print-laptop)
+	?output <- (output (id test) (is-finished Y) (model $?models) (for-print ?forprint))
+	?laptop <- (laptop (model ?forprint))
+	=>
+	(printout t ?forprint crlf)
+	(retract ?fact)
+	(retract ?laptop)
+	(assert (print-begin))
+)
+
+
+
+;(defrule MAIN::detailed-information
+;	?output <- (output (id test) (is-finished Y) (model $?models&:(>= (length$ $?models) 0)) (ready-print N))
+;	=>
+;	(printout t "Which laptop would you want to view the detail (by using index)?%n" $?models "%nquit: -1%nrestart session: 0%n")
+;	(modify ?output(is-finished N))
+;	;(bind ?a (read-number))
+;	;(if (eq ?a -1) then
+;	;	(exit)
+;	;else 
+;	;	(if (eq ?a 0) then
+;	;		(reset)
+;	;	else
+;	;		(bind ?laptop (nth$ ?a $?models))
+;	;		(modify ?output(for-print ?laptop) (ready-print Y))
+;	;	)
+;	;)
+;)
+
+;(defrule MAIN::print-info
+;	?output <- (output (id test) (is-finished Y) (ready-print Y) (for-print ?laptop&:(neq ?laptop "none")))
+;	(laptop (model ?model&:(eq ?model ?laptop)))
+;	=>
+;	(printout t "sample laptop" crlf)
+;	(modify ?output(ready-print N))
+;)
 
 (deffacts MAIN::load-question-descriptions
 	(qn-dscpt(id 0)(content "Why do you want a new computer?<opt>

@@ -5,6 +5,12 @@
 	(import DATASET ?ALL)
 )
 
+(defrule 3DGAMEMATCH::mark-finish
+	?output <- (output (id test))
+	=>
+	(modify ?output(is-finished Y))
+)
+
 (defrule 3DGAMEMATCH::matchlaptop
 	(laptop-requirement 
 		(price-upper ?price-upper) 
@@ -24,7 +30,7 @@
 		(screen-size ?screen-size&:(and (>= ?screen-size ?ssl) (<= ?screen-size ?ssu))) 
 		(is-fhd ?is-fhd-laptop&:(or (eq ?is-fhd none) (and (eq ?is-fhd Y) (eq ?is-fhd-laptop Y)))) 
 		(is-ultra-hd ?is-ultra-hd-laptop&:(or (eq ?is-ultra-hd none) (and (eq ?is-ultra-hd Y) (eq ?is-ultra-hd-laptop Y)))))
-	?output <- (output (id test) (model $?models))
+	?output <- (output (id test) (is-finished Y) (model $?models))
 	=>
 	(if (eq (nth$ 1 $?models) "none") 
 	then

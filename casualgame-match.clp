@@ -5,6 +5,12 @@
 	(import DATASET ?ALL)
 )
 
+(defrule CASUALGAMEMATCH::mark-finish
+	?output <- (output (id test) (is-finished N))
+	=>
+	(modify ?output(is-finished Y))
+)
+
 (defrule CASUALGAMEMATCH::matchlaptop
 	(laptop-requirement 
 		(price-upper ?price-upper) 
@@ -28,7 +34,7 @@
 		(is-ultra-hd ?is-ultra-hd-laptop&:(or (eq ?is-ultra-hd none) (and (eq ?is-ultra-hd Y) (eq ?is-ultra-hd-laptop Y)))) 
 		(is-touchable ?is-touchable-laptop&:(or (eq ?is-touchable none) (eq ?is-touchable ?is-touchable-laptop))) 
 		(detachable ?detachable-laptop&:(or (eq ?detachable none) (eq ?detachable ?detachable-laptop))))
-	?output <- (output (id test) (model $?models))
+	?output <- (output (id test) (is-finished Y) (model $?models))
 	=>
 	(if (eq (nth$ 1 $?models) "none") 
 	then

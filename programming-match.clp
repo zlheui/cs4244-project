@@ -5,6 +5,12 @@
 	(import DATASET ?ALL)
 )
 
+(defrule PROGRAMMING-MATCH::mark-finish
+	?output <- (output (id test))
+	=>
+	(modify ?output(is-finished Y))
+)
+
 (defrule PROGRAMMING-MATCH::match-programming-laptop
 	(laptop-requirement 
 		(price-upper ?price-upper) 
@@ -27,7 +33,7 @@
 		(battery-life ?bt-life&:(>= ?bt-life ?bt-lower))
 		(os ?laptop-os&:(or (= (str-compare ?os "none") 0) (= (str-compare ?laptop-os ?os) 0)))
 	)
-	?output <- (output (id test) (model $?models))
+	?output <- (output (id test) (is-finished Y) (model $?models))
 	=>
 	(if (eq (nth$ 1 $?models) none) 
 	then
