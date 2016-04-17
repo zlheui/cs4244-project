@@ -175,9 +175,9 @@
 	(if (= ?a 1) then
 		(modify ?req(screen-size-upper 12.0))
 	else (if (= ?a 2) then
-		(modify ?req(screen-size-lower 12.0) (screen-size-upper 13.5))
+		(modify ?req(screen-size-lower 12.0) (screen-size-upper 14))
 	else (if (= ?a 3) then
-		(modify ?req(screen-size-lower 13.5))
+		(modify ?req(screen-size-lower 14))
 	)))
 )
 
@@ -305,10 +305,10 @@
 			3[Web Browsing]
 			4[Development]
 			5[Gaming]</end>"))
-	(qn-dscpt(id 1)(content "How much do you want to pay for your new computer?</end>"))
-	(qn-dscpt(id 2)(content "How big do you want your computer to be (in inch)?<opt>
-		1[11 or smaller]   2[13]   3[15 or larger]    4[don't care]</end>"))
-	(qn-dscpt(id 3)(content "What screen resolution do you prefer?<opt>
+	(qn-dscpt(id 1)(content "How much are you willing to pay for your new computer?</end>"))
+	(qn-dscpt(id 2)(content "How big do you want your screen size to be (in inch)?<opt>
+		1[12 or smaller]   2[about 13]   3[14 or larger]    4[don't care]</end>"))
+	(qn-dscpt(id 3)(content "Which screen resolution do you prefer?<opt>
 		1[FHD]    2[4K]    3[don't care]</end>"))
 )
 
