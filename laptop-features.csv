@@ -27,7 +27,7 @@ Asus,Asus K501UB-FI043T,1598,15.6,3840,2160,Y,Y,N,2,Intel,2,2.5,4,8,,,NVIDIA GeF
 Asus,Asus K501UX-DM079T,1698,15.6,1920,1080,Y,N,N,2,Intel,2,2.5,4,8,,,NVIDIA GeForce GTX 950M,Y,2,1024,HDD,,,5,Win10,1,Black,N
 Asus,Asus K501UX-FI097T,1998,15.6,3840,2160,Y,Y,N,2,Intel,2,2.5,4,16,,,NVIDIA GeForce GTX 950M,Y,2,1024,HDD,,,5,Win10,1,Black,N
 Asus,Asus X456UB-WX006T,999,14,1366,768,N,N,N,2,Intel,2,2.3,2,8,,,Intel HD Graphics 520,N,1,1024,HDD,,,4,Win10,1,Black,N
-HP,HP Elite x2 1012 G1 LTE (With travel keyboard),2099,12,1920,1280,Y,N,Y,1.2,Intel,2,1.1,2,8,LPDDR3,1866,Intel HD Graphics 515,N,0,256,SSD,,,7,Windows 10 Pro 64,1,,Y
+HP,HP Elite x2 1012 G1 LTE,2099,12,1920,1280,Y,N,Y,1.2,Intel,2,1.1,2,8,LPDDR3,1866,Intel HD Graphics 515,N,0,256,SSD,,,7,Windows 10 Pro 64,1,,Y
 HP,HP EliteBook Folio 9480m Notebook PC,2999,14,1366,768,N,N,N,1.61,Intel,2,2.1,3,8,DDR3L,1600,Intel HD Graphics 4400,N,0,256,SSD,,,5,Windows 7 Pro 64,3,,N
 HP,HP ENVY Notebook - 13-d117tu,1899,13.3,3200,1800,Y,Y,N,1.39,Intel,2,2.5,4,8,LPDDR3,1600,Intel HD Graphics 520,N,1,512,SSD,,,7,Windows 10 Home 64,1,Silver,N
 HP,HP ENVY Notebook - 15-ae139TX,1599,15.6,1920,1080,Y,N,N,2.12,Intel,2,2.5,4,8,DDR3L,1600,NVIDIA GeForce GTX 950M,Y,2,256,SSD,,,5,Windows 10 Home 64,1,Silver,N
@@ -47,21 +47,21 @@ Lenovo,Lenovo IdeaPad 500S-14ISK 80Q3005ESB,1049,14,1920,1080,Y,N,N,1.8,Intel,2,
 Lenovo,Lenovo Ideapad 700-15ISK 80RU008CSB,1408,15.6,1920,1080,Y,N,N,2.3,Intel,4,2.6,5,8,DDR4,2133,NVIDIA GeForce GTX 950M,Y,2,500,HDD,5400,Nil,4,Windows 10 Home 64,1,Black,N
 Dell,Dell Inspiron 11 3000 Series (3162),349,11.6,1366,768,N,N,N,1.18,Intel,2,1.6,0,2,DDR3L,1600,Intel HD Graphics,N,0,32,EMMC,,Up to 4 GB DDR3L; Up to 500 GB HDD,9.5,Windows 10 Home 64,1,"Blue, Red, White",N
 Dell,Dell Inspiron 13 7000 Series 2-in-1 (7348),949,13.3,1366,768,N,N,Y,1.67,Intel,2,2.2,2,4,DDR3L,1600,Intel HD Graphics 5500,N,0,500,HDD,5400,Nil,6,Windows 10 Home 64,1,Silver,N
-Dell,Dell Inspiron 14 5000 Series (Intel®) - 5459 ,949,14,1366,768,N,N,N,2,Intel,2,2.3,2,4,DDR3L,1600,AMD RadeonŽ R5 M335 2GB DDR3,Y,0,500,HDD,5400,Up to 1 TB HDD;Up to AMD RadeonŽ R5 M335 4GB DDR3;,8,Windows 10 Home 64,1,"Red, White, Silver, Black",N
-Dell,Dell Inspiron 15 7000 Series (Intel®),1899,15.6,3840,2160,Y,Y,Y,2.72,Intel,4,2.6,5,8,DDR3L,1600,NVIDIA GeForce GTX 960M,Y,2,1024,HDD,5400,Up to 6th Gen IntelŒ CoreŽ i7,11,Windows 10 Home 64,1,Black,N
+Dell,Dell Inspiron 14 5000 Series - 5459 ,949,14,1366,768,N,N,N,2,Intel,2,2.3,2,4,DDR3L,1600,AMD RadeonŽ R5 M335 2GB DDR3,Y,0,500,HDD,5400,Up to 1 TB HDD;Up to AMD RadeonŽ R5 M335 4GB DDR3;,8,Windows 10 Home 64,1,"Red, White, Silver, Black",N
+Dell,Dell Inspiron 15 7000 Series,1899,15.6,3840,2160,Y,Y,Y,2.72,Intel,4,2.6,5,8,DDR3L,1600,NVIDIA GeForce GTX 960M,Y,2,1024,HDD,5400,Up to 6th Gen IntelŒ CoreŽ i7,11,Windows 10 Home 64,1,Black,N
 Lenovo,Lenovo Ideapad Y700-15 80NV00BHSB,1499,15.6,1920,1080,Y,N,N,2.6,Intel,4,2.3,4,4,DDR4,2133,NVIDIA GeForce GTX 960M,Y,2,1024,HDD,5400,Up to 6th Generation IntelŒ Quad-Core i7 Processor;Up to NVIDIAŒ GTX 960M 4 GB GDDR5;Up to 16 GB DDR4;Up to 1 TB HDD; Up to 512 GB SSD; Up to 1 TB + 8 GB SSHD;,5,Windows 10 Home 64,1,Black,N
 Lenovo,Lenovo S41-35 80JW0014SB,619,14,1366,768,N,N,N,1.68,AMD,4,1.8,1,4,DDR3L,1600,AMD Radeon R5 M330 2GB,Y,0,500,HDD,5400,Up to AMD A8-7410 Processor;Up to 8GB DDR3L;Up to 1TB HDD or up to 1TB SSHD,6,Windows 10 Home 64,1,Silver,N
 Lenovo,Lenovo YOGA 700-14ISK 80QD00CBSB,1616.98,14,1920,1080,Y,N,Y,1.6,Intel,2,2.5,4,8,DDR3L,1600,NVIDIA GeForce GT 940M,Y,1,256,SSD,,Nil,7,Windows 10 Home 64,1,Black,N
 Lenovo,Lenovo YOGA 900-13 80MK00EHSB ,1999,13.3,3200,1800,Y,N,Y,1.3,intel,2,2.3,2,8,LPDDR3,1600,Intel HD Graphics 520,N,1,256,SSD,,Up to 6th Generation IntelŒ CoreŽ i7 Processor;Up to 16 GB LP-DDR3L;Up to 512 GB Samsung SSD,10,Windows 10 Home 64,1,"Silver, Clementine Orange, Champagne Gold",N
 Apple,Apple MacBook 256G,1788,12,2304,1440,Y,N,N,0.92,Intel,2,1.1,1,8,LPDDR3,1600,Intel HD Graphics 5300,N,0,256,SSD,,,9,OS X,0,"Silver, Gold, Space grey",N
 Apple,Apple MacBook 512G,2288,12,2304,1440,Y,N,N,0.92,Intel,2,1.2,1,8,LPDDR3,1600,Intel HD Graphics 5300,N,0,512,SSD,,,9,OS X,0,"Silver, Gold, Space grey",N
-Microsoft,Microsoft Surface Book i5 128G,1499,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,N,1,128,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Book i5 256G,1699,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,N,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Book,1899,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,Y,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Book,3199,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,16,,,Intel HD Graphics 520,Y,1,1024,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Book,2099,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,8,,,Intel HD Graphics 520,Y,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Book,2699,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,16,,,Intel HD Graphics 520,Y,1,512,SSD,,,12,Windows 10 Pro,1,Silver,Y
-Microsoft,Microsoft Surface Pro 4 ,899,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.4,3,4,,,Intel HD Graphics 520,N,1,128,SSD,,,9,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book - 128GB / Intel Core i5,1499,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,N,1,128,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book - 256GB / Intel Core i5,1699,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,N,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book - 256GB / Intel Core i5 / dGPU,1899,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.4,3,8,,,Intel HD Graphics 520,Y,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book - 1TB / Intel Core i7,3199,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,16,,,Intel HD Graphics 520,Y,1,1024,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book - 256GB / Intel Core i7,2099,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,8,,,Intel HD Graphics 520,Y,1,256,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Book - 512GB / Intel Core i7,2699,13.5,3000,2000,Y,N,Y,1.51,Intel,2,2.6,4,16,,,Intel HD Graphics 520,Y,1,512,SSD,,,12,Windows 10 Pro,1,Silver,Y
+Microsoft,Microsoft Surface Pro 4 - 128GB / Intel Core m3,899,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.4,3,4,,,Intel HD Graphics 520,N,1,128,SSD,,,9,Windows 10 Pro,1,Silver,Y
 Microsoft,Microsoft Surface Pro 4 ,1199,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.4,3,8,,,Intel HD Graphics 520,N,1,256,SSD,,,9,Windows 10 Pro,1,Silver,Y
 Microsoft,Microsoft Surface Pro 4 ,1799,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.2,4,16,,,Intel Iris Graphics 540,N,2,256,SSD,,,9,Windows 10 Pro,1,Silver,Y
 Microsoft,Microsoft Surface Pro 4 ,1599,12.3,2736,1824,Y,N,Y,0.77,Intel,2,2.2,4,8,,,Intel Iris Graphics 540,N,2,256,SSD,,,9,Windows 10 Pro,1,Silver,Y
@@ -78,8 +78,8 @@ Lenovo,Lenovo ThinkPad X1 Yoga Convertible,3023,14,2560,1440,Y,N,Y,1.36,Intel,2,
 Lenovo,Lenovo ThinkPad Yoga 260 Convertible,1749,12.5,1920,1080,Y,N,Y,1.3,Intel,2,2.3,2,8,DDR4,2133,Intel HD Graphics 520,N,1,256,SSH,,Up to 6th Gen IntelŒ CoreŽ i7 processor;Up to 16 GB DDR4 DIMM;Up to 512 GB SSD,10,Windows 10 Pro 64,1,Black,N
 Asus,Asus UX305UA-FB004T,1898,13.3,1920,1080,Y,N,N,1.3,Intel,2,2.5,4,8,,,Intel HD Graphics 520,N,1,512,SSD,,,10,Win10,1,Black,N
 Dell,Dell XPS 12,2099,12.5,3840,2160,Y,Y,Y,1.27,Intel,2,1.1,2,8,DDR3L,1600,Intel HD Graphics 515,N,0,256,SSD,,Up to 512 GB SSD;Up to 6th Generation IntelŒ CoreŽ m7 6Y75,5,Windows 10 Home 64,1,Black,Y
-Dell,Dell XPS 13(9350) ,1399,13.3,1920,1080,Y,N,N,1.2,Intel,2,2.3,2,4,LPDDR3,1866,Intel HD Graphics 520,N,1,128,SSD,,Up to 8 GB Memory; Up to 256 SSD; Up to 6th Generation Intel Core i7-6560U,8,Windows 10 Home 64,1,Silver,N
-Dell,Dell XPS 15 (9550) ,2399,15.6,1920,1080,Y,N,N,0.78,Intel,4,2.6,5,8,DDR4,2133,NVIDIA GeForce GTX 960M,Y,2,1024,HDD,5400,Up to 16 GB Memory; Up to 512 SSD,6,Windows 10 Home 64,1,Silver,N
+Dell,Dell XPS 13 (9350),1399,13.3,1920,1080,Y,N,N,1.2,Intel,2,2.3,2,4,LPDDR3,1866,Intel HD Graphics 520,N,1,128,SSD,,Up to 8 GB Memory; Up to 256 SSD; Up to 6th Generation Intel Core i7-6560U,8,Windows 10 Home 64,1,Silver,N
+Dell,Dell XPS 15 (9550),2399,15.6,1920,1080,Y,N,N,0.78,Intel,4,2.6,5,8,DDR4,2133,NVIDIA GeForce GTX 960M,Y,2,1024,HDD,5400,Up to 16 GB Memory; Up to 512 SSD,6,Windows 10 Home 64,1,Silver,N
 Asus,Asus ZenBook UX303UB-DQ028T,1698,13.3,3200,1800,Y,Y,N,1.45,Intel,2,2.5,4,8,,,NVIDIA GeForce GT 940M,Y,1,1024,HDD,,,7,Win10,2,Gray,N
 Asus,Asus ZenBook UX303UB-R4074T,1398,13.3,1920,1080,Y,N,N,1.45,Intel,2,2.3,2,8,,,NVIDIA GeForce GT 940M,Y,1,1024,HDD,,,7,Win10,2,Gray,N
 Asus,Asus ZenBook UX305CA-FB055T,1898,13.3,3200,1800,Y,Y,N,1.2,Intel,2,1.2,2,8,,,Intel HD Graphics 515,N,0,512,SSD,,,10,Win10,2,Black,N
